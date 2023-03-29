@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacte</title>
+    <link rel="stylesheet" type="text/css" href="/first-web/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/first-web/css/contacte.css" />
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="/first-web/index">Inicio</a></li>
+            <li><a href="/first-web/contacte">Contactar</a></li>
+            <li><a href="/first-web/references">Referencias</a></li>
+        </ul>
+    </div>
+    <p class="titulo">CONTACTA<br/>CONMIGO</p>
+    <h1>Esto es la sección de contacto.</h1>
+    <h2>Puedes contactar conmigo desde aquí.</h2>
+    <div id="form">
+        <form action="/first-web/form_result" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label for="nom">Nombre</label>
+                    </td>
+                    <td>
+                        <input type="text" id="nom" name="nom" placeholder="tu nombre"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="apell">Apellidos</label>
+                    </td>
+                    <td>
+                        <input type="text" id="apell" name="apell" placeholder="tu apellido"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="edad">Edad</label>
+                    </td>
+                    <td>
+                        <input type="number" id="edad" name="edad" placeholder="19"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Seleccione su genero:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="masc">Masculino</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="masc" name="genero" value="masc" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fem">Femenino</label>
+                    </td>
+                    <td>
+                          <input type="radio" id="fem" name="genero" value="fem"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="otro">Otro...</label>
+                    </td>
+                    <td>
+                          <input type="radio" id="otro" name="genero" value="otro" checked/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                    <td>
+                          <input type="email" id="email" name="correo" placeholder="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tipo">Motivo</label>
+                    </td>
+                    <td>
+                            <select id="tipo" name="tipo">
+                                    <option value="otros" selected>Otros</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                    <option value="reclamacion">Reclamación</option>
+                            </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Seleccione el idioma de respuesta: </td>
+                </tr>
+                <tr>
+                    <td><label for="catalan">Catalan</label></td>
+                    <td>
+                          <input type="checkbox" id="catalan" name="idioma" value="catalan" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="castellano">Castellano</label>
+                    </td>
+                    <td>
+                          <input type="checkbox" id="castellano" name="idioma" value="castellano">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ingles">Inglés</label>
+                    </td>
+                    <td>
+                          <input type="checkbox" id="ingles" name="idioma" value="ingles">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="coment">Comentario</label>
+                    </td>
+                    <td>
+                          <textarea id="coment" rows="10" cols="50" name="comentario" placeholder="Utiliza este campo para tus comentarios"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <input type="submit" value="Enviar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

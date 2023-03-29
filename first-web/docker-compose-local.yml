@@ -1,0 +1,24 @@
+# COMMAND: the -f parameter indicates the file to be used as docker-compose.
+##############################################################
+# docker-compose -f .\docker-compose-local.yml up -d --build # 
+##############################################################
+
+version: '3.8'
+
+services:
+  catalin-trandafir.com_first-web:
+    build: 
+      context: './main-page'
+      dockerfile: 'Dockerfile.local'
+    ports:
+      - 3001:3000
+    environment:
+      - NODE_ENV=development
+      - DEBUG=nodejs-docker-express:*
+      - PORT=3001
+      - TZ='Europe/Madrid'
+    volumes:
+      #PARA QUE FUNCIONE EL NODAEMON
+      - ./main-page/src/:/usr/src/app/
+
+      

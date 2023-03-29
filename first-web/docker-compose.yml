@@ -1,0 +1,28 @@
+# COMMAND: the -f parameter indicates the file to be used as docker-compose.
+##############################################################
+# docker-compose -f .\docker-compose-local.yml up -d --build # 
+##############################################################
+
+version: '3.8'
+
+services:
+  catalin-trandafir.com:
+    image: "chocalata/catalin-trandafir.com:first-web_2023-03-17-v1"
+    environment:
+      - PORT=3000
+      - TZ='Europe/Madrid'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.entrypoints=web, websecure"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.rule=Host(`catalin-trandafir.com`, `www.catalin-trandafir.com`) && PathPrefix(`/first-web`)"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.tls=true"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.tls.certresolver=production"
+      - "traefik.http.services.catalin-trandafir_com__first-web.loadbalancer.server.port=3000"
+      - "traefik.docker.network=traefik"
+    restart: "unless-stopped"
+    networks:
+      - "traefik"
+networks:
+  traefik:
+    name: traefik
+    external: true

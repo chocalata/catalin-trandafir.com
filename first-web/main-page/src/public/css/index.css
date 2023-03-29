@@ -1,0 +1,101 @@
+div.clear{
+    clear: both;
+}
+div.izquierda{
+    float: left;
+    width: 48%;
+    border-bottom: 5px solid rgb(255, 85, 85);
+    margin-top: 10px;
+    background-color: rgba(255, 133, 133, 0.5);
+    position: relative;
+    border-radius: 100%;
+
+    
+}
+div.derecha{
+    float: right;
+    width: 48%;
+    border-bottom: 5px solid rgb(255, 85, 85);
+    margin-top: 10px;
+    background-color: rgba(255, 133, 133, 0.5);
+    position: relative;
+    border-radius: 100%;
+    
+
+
+}
+h1.tipo{
+    text-align: center;
+    font-family: Tahoma;
+    color: rgb(255, 103, 103);
+    
+}
+img.patin{
+    width: 430px;
+    height: 250px;
+    position: relative;
+    float: left;
+
+}
+img.patinamorfo{
+    width: 350px;
+    height: 250px;
+    position: relative;
+    float: left;
+}
+div p.explicacion{
+    font-family: Tahoma;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    padding-right: 10px;
+}
+
+h2.h2video{
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#divvideo{
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    top: 277px;
+    left:585px;
+}
+.boton{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 103, 103);
+    border-radius: 6px;
+    border: none;
+}
+.boton:hover{
+    background-color: black;
+    color: white;
+}
+#botoncerrar{
+    position: absolute;
+    top: -25px;
+    left: 700px;
+    
+}
+#botonplay{
+    position: absolute;
+    top: 420px;
+    left: 275px;
+    width: 200px;
+    height: 100px;
+    font-size: 25px;
+}
+#botonabrir{
+    margin-left: 860px;
+    height: 50px;
+    font-size: 15px;
+    
+}
+#video{
+    position: relative;
+    width: 720px;
+}

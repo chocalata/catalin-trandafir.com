@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form data</title>
+    <link rel="stylesheet" type="text/css" href="/first-web/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/first-web/css/contacte.css" />
+</head>
+<body>
+    <div class="menu">
+        <ul>
+           <li><a href="/first-web/index">Inicio</a></li>
+           <li><a href="/first-web/contacte">Contactar</a></li>
+           <li><a href="/first-web/references">Referencias</a></li>
+        </ul>
+    </div>
+    <h1>Nombre: <%= form_data.nom %></h1>
+    <h1>Apellidos: <%= form_data.apell %></h1>
+    <h1>Edad: <%= form_data.edad %></h1>
+    <h1>Genero: <%= form_data.genero %></h1>
+    <h1>Correo: <%= form_data.correo %></h1>
+    <h1>Tipo: <%= form_data.tipo %></h1>
+    <h1>Idioma/s: <%= form_data.idioma %></h1>
+    <h1>Comentario: <%= form_data.comentario %></h1>
+
+</body>
+</html>
