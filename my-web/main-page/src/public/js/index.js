@@ -1,5 +1,8 @@
 import * as THREE from 'three';
-import { OrbitControls } from '/lib/three/examples/jsm/controls/OrbitControls.js';
+import Stats from 'three/addons/libs/stats.module.js';
+
+
+const canvas = document.querySelector('#bg');
 
 //Container of the objects, camera and lights
 const scene = new THREE.Scene();
@@ -9,7 +12,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 //rederiza los graficos a la escena.
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#bg')
+    canvas: canvas
 });
 
 //Cantidad de pixeles del dispositivo
@@ -18,51 +21,85 @@ renderer.setPixelRatio(window.devicePixelRatio);
 //tamaño de la pantalla
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-camera.position.setZ(60);
+const sphere_geometry = new THREE.SphereGeometry(0.1);
+const material = new THREE.MeshStandardMaterial({color: 0xffffff});
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-//Basic Material dont let the light bouce out of it
-//const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
-const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
-const figure = new THREE.Mesh( geometry, material)
-
-scene.add(figure)
-
-//light point to everywhere from the position
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(20,20,20);
+for (let i = 0; i < 1000; i++) {
+    const sphere = new THREE.Mesh(sphere_geometry, material);
+  
+    // Random positions between -25 and 25
+    const x = Math.random() * 100 - 50;
+    const y = Math.random() * 100 - 50;
+    const z = Math.random() * 100 - 50;
+    
+    sphere.position.set(x, y, z);
+    scene.add(sphere);
+}
 
 //lights everything equaly
 const ambienLight = new THREE.AmbientLight(0xffffff);
 
-scene.add(pointLight, ambienLight);
+scene.add(ambienLight);
 
+//size of the camera and renderer depending on the size of the screen.
+window.addEventListener(
+    'resize',
+    () => {
+        camera.aspect = window.innerWidth / window.innerHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(window.innerWidth, window.innerHeight)
+        renderer.render(scene, camera)
+    },
+    false
+)
 
-/**
- * HELPING TOOLS
- */
-//Helps showing que light and direction of it
-const lightHelper = new THREE.PointLightHelper(pointLight);
+//Saves the mouse position
+let mouse = new THREE.Vector2();
 
-//Helps showing a grid into the scene.
-const gridHelper = new THREE.GridHelper(200, 50);
+function onMouseMove(event) {
+    let old_x = mouse.x;
+    let old_y = mouse.y;
 
-scene.add(lightHelper, gridHelper);
+    // The position of the mouse in the middle is (0,0)
+    mouse.x = -((event.clientX - window.innerWidth/2) / window.innerWidth);
+    mouse.y = -((event.clientY - window.innerHeight/2) / window.innerHeight);
 
-////////////////////////////////////////////
+    //console.log({old: `(${old_x}, ${old_y})`, new: `(${mouse.x}, ${mouse.y})`});
+    
+    // Rota la cámara según la posición del mouse
+    camera.rotation.y = mouse.x * 2;
+    camera.rotation.x = mouse.y * 2;
+    
+    // Renderiza la escena
+    renderer.render(scene, camera);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+}
+
+function onTouchMove(event) {
+    // The position of the mouse in the middle is (0,0)
+    mouse.x = -((event.touches[0].clientX - window.innerWidth/2) / window.innerWidth);
+    mouse.y = -((event.touches[0].clientY - window.innerHeight/2) / window.innerHeight);
+
+    // Rota la cámara según la posición del mouse
+    camera.rotation.y = mouse.x * 2;
+    camera.rotation.x = mouse.y * 2;
+    
+    // Renderiza la escena
+    renderer.render(scene, camera);
+
+}
+
+canvas.addEventListener('mousemove', onMouseMove, false);
+canvas.addEventListener('touchmove', onTouchMove, false);
+
+renderer.render(scene, camera);
 
 function animate(){
     requestAnimationFrame(animate);
 
-    figure.rotation.x += 0.01;
-    figure.rotation.y += 0.001;
-    figure.rotation.z += 0.01;
-
-    controls.update();
-
+    camera.rotation.y += 0.001;
+    
     renderer.render(scene, camera);
 }
 
-animate()
+//animate()

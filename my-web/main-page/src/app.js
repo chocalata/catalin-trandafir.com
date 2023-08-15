@@ -33,8 +33,8 @@ app.use(
     helmet.contentSecurityPolicy({
         directives: {
             defaultSrc: ["'self'"],
-            mediaSrc: ["'self'", "https://drive.google.com", "https://doc-04-6k-docs.googleusercontent.com/", "https://doc-04-2g-docs.googleusercontent.com"],
-            scriptSrc: ["'self'", "'unsafe-inline'"],
+            mediaSrc: ["'self'"],
+            scriptSrc: ["'self'"],
             scriptSrcElem: ["'self'", "'unsafe-inline'"]
         }
     })

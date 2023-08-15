@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalin</title>
-    <link rel="icon" href="/img/C.png" type="image/gif" > <!--GIFS NOT WORKING ON ALL BROWSERS-->
+    <link rel="icon" href="/img/C.png" type="image" > <!--GIFS NOT WORKING ON ALL BROWSERS-->
     <link rel="stylesheet" type="text/css" href="/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
     <!--IMPORT MAP-->
@@ -17,7 +17,8 @@
     <script type="importmap">
         {
             "imports": {
-                "three": "/lib/three/build/three.module.js"
+                "three": "/lib/three/build/three.module.js",
+                "three/addons/": "/lib/three/examples/jsm/"
             }
         }
     </script>
@@ -27,5 +28,7 @@
     
     <!-- MODULES -->
     <script type="module" charset="utf8" src="/js/index.js"></script>
+
+    <span class="dot"></span>
 </body>
 </html>
