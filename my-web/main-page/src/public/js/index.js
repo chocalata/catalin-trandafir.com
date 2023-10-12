@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 
+//////////POR AQUIIII: NO LO HARÉ CON UN PUNTO, LO HARÉ CON EL MOUSE.
 
 const canvas = document.querySelector('#bg');
 

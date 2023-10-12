@@ -2,11 +2,11 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    cursor: none;
+    /*cursor: none;*/
 
 }
 
-.dot {
+/*.dot {
     height: 5px;
     width: 5px;
     background-color: red;
@@ -14,5 +14,5 @@ canvas {
     position: absolute;
     top: 50%;
     left: 50%;
-}
+}NO LO HARÉ CON UN PUNTO, LO HARÉ CON EL MOUSE.*/
 
