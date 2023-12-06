@@ -1,19 +1,21 @@
-const express = require('express');
+const express = require("express");
 
-const path = require('path');
+const path = require("path");
 
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
-const helmet = require('helmet');
+const helmet = require("helmet");
 
-const Logger = require('bunyan');
+const Logger = require("bunyan");
 
 const log = new Logger({
-    name: 'logger',
-    streams: [{
-         level: 'info',
-         stream: process.stdout
-    }]
+	name: "logger",
+	streams: [
+		{
+			level: "info",
+			stream: process.stdout,
+		},
+	],
 });
 
 const root_routes = require("./routes/root_routes")(log);
@@ -29,36 +31,47 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Securing app with helmet, recommended practice by Express
 app.use(
-    //Executing drive videos.
-    helmet.contentSecurityPolicy({
-        directives: {
-            defaultSrc: ["'self'"],
-            mediaSrc: ["'self'"],
-            scriptSrc: ["'self'"],
-            scriptSrcElem: ["'self'", "'unsafe-inline'"]
-        }
-    })
+	//Executing drive videos.
+	helmet.contentSecurityPolicy({
+		directives: {
+			defaultSrc: ["'self'"],
+			mediaSrc: ["'self'"],
+			scriptSrc: ["'self'"],
+			scriptSrcElem: ["'self'", "'unsafe-inline'"],
+		},
+	})
 );
 
 //LIBS paths
-app.use('/lib/three/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
-app.use('/lib/three/examples/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
+app.use(
+	"/lib/three/build/",
+	express.static(path.join(__dirname, "node_modules/three/build"))
+);
+app.use(
+	"/lib/three/examples/jsm/",
+	express.static(path.join(__dirname, "node_modules/three/examples/jsm"))
+);
 
 //CSS paths
-app.use('/css', express.static(__dirname + '/public/css'));
+app.use("/css", express.static(__dirname + "/public/css"));
 
 //JS paths
-app.use('/js', express.static(__dirname + '/public/js'));
+app.use("/js", express.static(__dirname + "/public/js"));
 
 //IMG paths
-app.use('/img', express.static(__dirname + '/public/img'));
+app.use("/img", express.static(__dirname + "/public/img"));
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//FONTS paths
+app.use("/fonts", express.static(__dirname + "/public/fonts"));
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 //ENDPOINTS
-app.use('/', root_routes);
+app.use("/", root_routes);
 
 app.listen(process.env.PORT, () => {
-    console.log('Express is running on port ' + process.env.PORT + ' at ' + Date());
+	console.log(
+		"Express is running on port " + process.env.PORT + " at " + Date()
+	);
 });

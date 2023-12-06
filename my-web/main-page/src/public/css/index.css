@@ -1,18 +1,149 @@
+html {
+    scroll-behavior: smooth
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #C2D9FF;
+}
+
 canvas {
     position: fixed;
     top: 0;
     left: 0;
-    /*cursor: none;*/
-
+    z-index: -1;
 }
 
-/*.dot {
-    height: 5px;
-    width: 5px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}NO LO HARÉ CON UN PUNTO, LO HARÉ CON EL MOUSE.*/
+#header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    border-bottom: #fff solid 3px;
+    border-top: #fff solid 3px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
 
+#header-menu nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#logo {
+    position: fixed;
+    left: 2vw;
+    
+}
+
+#logo img {
+    height: 50px;
+}
+
+.menu li a {
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: #fff solid 2px;
+    border-radius: 10px;
+    background-color: black;
+    white-space: nowrap;
+    /* Prevent "About me" to overflow */
+}
+
+.menu li a:hover {
+    color: black;
+    background-color: white;
+}
+
+section {
+    padding-top: 75px;
+    margin-top: -75px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 8fr 1fr;
+    z-index: 2;
+}
+
+.row-1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.row-2 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.row-3 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+section#intro {
+    grid-template-rows: 1fr 1fr auto;    
+}
+
+#intro .row-1 {
+    padding-top: 10vh;
+}
+
+#big-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 36vh;
+    margin-bottom: 5vh;
+}
+
+#name {
+    font-size: 5vh;
+    text-align: center;
+    text-shadow: #7752FE 0 0 30px;
+}
+
+#job {
+    font-size: 3vh;
+    text-align: center;
+}
+
+#intro .row-2 {
+    padding-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#intro-menu nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+#intro-menu nav ul li {
+    display: inline-block;
+}
+
+#expand {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    animation: updown 1s infinite;
+}
+
+@keyframes updown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}

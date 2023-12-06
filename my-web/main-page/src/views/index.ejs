@@ -1,34 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalin</title>
-    <link rel="icon" href="/img/C.png" type="image" > <!--GIFS NOT WORKING ON ALL BROWSERS-->
-    <link rel="stylesheet" type="text/css" href="/css/layout.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
-    <!--IMPORT MAP-->
-    <!-- Remove this when import maps will be widely supported -->
-    <!--script
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Catalin</title>
+		<link rel="icon" href="/img/logo.svg" type="image" />
+		<!--GIFS NOT WORKING ON ALL BROWSERS-->
+		<link rel="stylesheet" type="text/css" href="/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
+		<!--IMPORT MAP-->
+		<!-- Remove this when import maps will be widely supported -->
+		<!--script
         async
         src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js">
     </script-->
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "/lib/three/build/three.module.js",
-                "three/addons/": "/lib/three/examples/jsm/"
-            }
-        }
-    </script>
-</head>
-<body>
-    <canvas id="bg"></canvas>
-    
-    <!-- MODULES -->
-    <script type="module" charset="utf8" src="/js/index.js"></script>
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "/lib/three/build/three.module.js",
+					"three/addons/": "/lib/three/examples/jsm/"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="bg"></canvas>
+		<main>
+			<header id="header-menu">
+				<a href="#intro" id="logo"
+					><img src="/img/logo.svg" alt="Logo"
+				/></a>
 
-    <!--span class="dot"></span--><!--NO LO HARÉ CON UN PUNTO, LO HARÉ CON EL MOUSE.-->
-</body>
+				<nav>
+					<ul class="menu">
+						<li><a href="#about-me">About me</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section id="intro">
+				<div class="row-1">
+					<img id="big-logo" src="/img/logo.svg" alt="Logo" />
+
+					<h1 id="name">Catalin Trandafir</h1>
+					<h2 id="job">Full-Stack developer</h2>
+				</div>
+				<div class="row-2" id="intro-menu">
+					<nav>
+						<ul class="menu">
+							<li><a href="#about-me">About me</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="row-3">
+					<a href="#about-me">
+						<img id="expand" src="/img/expand.svg" alt="Expand" />
+					</a>
+				</div>
+			</section>
+
+			<section id="about-me">
+				<div class="row-1">
+					<h1>About me</h1>
+				</div>
+				<div class="row-2">
+					<p>
+						I'm a web developer, I like to create websites and web
+						apps. I'm currently learning about webgl and three.js.
+						I'm also interested in learning about game development.
+					</p>
+				</div>
+			</section>
+			<section id="projects">
+				<div class="row-1">
+					<h1>Projects</h1>
+				</div>
+				<div class="row-2">
+					<p>Here are some of my projects</p>
+				</div>
+			</section>
+			<section id="contact">
+				<div class="row-1">
+					<h1>Contact</h1>
+				</div>
+				<div class="row-2">
+					<p>Here are some ways to contact me</p>
+				</div>
+			</section>
+			<!--div id="content" class="content-scroll">
+				<div id="about-me">
+					<h1>About me</h1>
+					<p>
+						I'm a web developer, I like to create websites and web apps.
+						I'm currently learning about webgl and three.js. I'm also
+						interested in learning about game development.
+					</p>
+				</div>
+				<div id="projects">
+					<h1>Projects</h1>
+					<p>Here are some of my projects</p>
+				</div>
+				<div id="contact">
+					<h1>Contact</h1>
+					<p>Here are some ways to contact me</p>
+				</div>
+			</div-->
+		</main>
+		<!--footer>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Aliquam sint recusandae eveniet id et delectus, explicabo nam
+				eum dolorum iste doloribus perferendis architecto reiciendis hic
+				ex unde ducimus deleniti ullam! Lorem ipsum dolor sit amet
+				consectetur adipisicing elit. Quia, quis. Tempore nobis, a cum
+				consequatur quis expedita similique sequi asperiores, possimus
+				fuga debitis ratione voluptate aperiam! Minima, delectus?
+				Reprehenderit, veritatis. Lorem ipsum dolor sit amet
+				consectetur, adipisicing elit. Fuga maxime illum natus quaerat
+				atque corrupti assumenda possimus, quia animi iure modi enim
+				praesentium architecto. Earum aut maiores eos velit dolor? Lorem
+				ipsum dolor sit amet cons
+			</p>
+		</footer-->
+
+		<script type="module" charset="utf8" src="/js/index.js"></script>
+	</body>
 </html>
