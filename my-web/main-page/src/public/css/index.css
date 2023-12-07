@@ -36,6 +36,10 @@ canvas {
     list-style-type: none;
 }
 
+.nav-menu {
+    display: none;
+}
+
 #logo {
     position: fixed;
     left: 2vw;
@@ -46,7 +50,7 @@ canvas {
     height: 50px;
 }
 
-.menu li a {
+.menu li a, .menu li img {
     text-decoration: none;
     margin: 0 10px;
     padding: 10px 20px;
@@ -57,7 +61,7 @@ canvas {
     /* Prevent "About me" to overflow */
 }
 
-.menu li a:hover {
+.menu li *:hover{
     color: black;
     background-color: white;
 }
@@ -98,7 +102,7 @@ section#intro {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 36vh;
+    max-height: 35vh;
     margin-bottom: 5vh;
 }
 
@@ -114,18 +118,52 @@ section#intro {
 }
 
 #intro .row-2 {
-    padding-top: 10vh;
+    padding-top: 8vh;
     margin-left: auto;
     margin-right: auto;
 }
 
 #intro-menu nav ul{
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
+
 }
 
 #intro-menu nav ul li {
     display: inline-block;
+}
+
+@media screen and (max-width: 540px) {
+    #header-menu {
+        justify-content: right;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .menu-option {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 475px) {
+    #intro-menu nav ul li {
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #intro .row-1 {
+        padding-top: 5vh;
+    }
+}
+
+@media screen and (max-width: 310px){
+    #big-logo {
+        max-height: 25vh;
+    }
 }
 
 #expand {

@@ -103,3 +103,11 @@ function isScrolledIntoView(elem) {
 
 	return elemBottom <= docViewBottom && elemTop >= docViewTop;
 }
+
+document.getElementById("img-menu").addEventListener("mouseover", (element) => {
+	element.target.src = "img/menu-black.svg";
+});
+
+document.getElementById("img-menu").addEventListener("mouseout", (element) => {
+	element.target.src = "img/menu.svg";
+});
