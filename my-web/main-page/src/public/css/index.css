@@ -78,6 +78,7 @@ section {
 .row-1 {
     grid-column: 2;
     grid-row: 1;
+    padding-top: 10vh;
 }
 
 .row-2 {
@@ -94,10 +95,6 @@ section#intro {
     grid-template-rows: 1fr 1fr auto;    
 }
 
-#intro .row-1 {
-    padding-top: 10vh;
-}
-
 #big-logo {
     display: block;
     margin-left: auto;
@@ -109,12 +106,10 @@ section#intro {
 #name {
     font-size: 5vh;
     text-align: center;
-    text-shadow: #7752FE 0 0 30px;
 }
 
-#job {
-    font-size: 3vh;
-    text-align: center;
+.highlight {
+    text-shadow: #7752FE 0 0 30px;
 }
 
 #intro .row-2 {
@@ -133,6 +128,40 @@ section#intro {
 #intro-menu nav ul li {
     display: inline-block;
 }
+
+#expand {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    animation: updown 1s infinite;
+}
+
+@keyframes updown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+#about-me .row-1 {
+    margin-bottom: 0;
+}
+
+#about-me .row-1 h2 {
+    font-size: 100px;
+}
+
+#about-me .row-1 p {
+    /*margin-top: 5vh;*/
+    font-size: 32px;
+}
+
 
 @media screen and (max-width: 540px) {
     #header-menu {
@@ -166,22 +195,3 @@ section#intro {
     }
 }
 
-#expand {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    animation: updown 1s infinite;
-}
-
-@keyframes updown {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
