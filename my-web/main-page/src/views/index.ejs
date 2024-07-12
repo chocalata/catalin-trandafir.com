@@ -72,6 +72,8 @@
 			</section>
 
 			<section id="about-me">
+				<canvas id="line"></canvas>
+
 				<div class="row-1">
 					<h2>Hello! I'm <b class="highlight">Cata</b></h2>
 					<p>
@@ -80,7 +82,35 @@
 						<a href="https://www.pue.es/">PUE.</a>
 					</p>
 				</div>
-				<div class="row-2"></div>
+				<div class="row-2">
+					<div class="timeline">
+						<% workData.forEach((work, index, array) => { %>
+						<div class="container <%= work.position %>">
+							<dot id="dot-<%= (index + 1) %>"></dot>
+							<div class="content">
+								<h2 class="highlight">
+									<a href="<%= work.company_url %>">
+										<%= work.company_name %>
+									</a>
+								</h2>
+								<p><%= work.work_description %></p>
+								<% work.technologies.forEach((tech, index,
+								array) => { %>
+								<div class="icon-box">
+									<%= tech.name %>
+									<img
+										class="tech-svg"
+										src="/img/tech/<%= tech.file %>.svg"
+										alt="<%= tech.name %>"
+									/>
+								</div>
+								<% }) %>
+							</div>
+						</div>
+						<% }) %>
+					</div>
+				</div>
+				<div class="row-3"></div>
 			</section>
 			<section id="projects">
 				<div class="row-1">

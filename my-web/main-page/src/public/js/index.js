@@ -55,6 +55,7 @@ window.addEventListener(
 		camera.updateProjectionMatrix();
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.render(scene, camera);
+		showJobLine();
 	},
 	false
 );
@@ -72,8 +73,6 @@ function handleScrollCamera() {
 	lastScrollY = window.scrollY;
 }
 
-window.addEventListener("scroll", handleScrollCamera);
-
 function animate() {
 	requestAnimationFrame(animate);
 	camera.rotation.x += (targetRotation - camera.rotation.x) * 0.1; // Smooth scrolling effect
@@ -81,9 +80,14 @@ function animate() {
 }
 
 animate();
-
+showJobLine();
 showHeader();
-window.addEventListener("scroll", () => showHeader());
+
+window.addEventListener("scroll", () => {
+	showJobLine();
+	handleScrollCamera();
+	showHeader();
+});
 
 function showHeader() {
 	if (isScrolledIntoView(introMenu)) {
@@ -111,3 +115,41 @@ document.getElementById("img-menu").addEventListener("mouseover", (element) => {
 document.getElementById("img-menu").addEventListener("mouseout", (element) => {
 	element.target.src = "img/menu.svg";
 });
+
+function showJobLine() {
+	const canvas = document.getElementById("line");
+	const ctx = canvas.getContext("2d");
+
+	// Ajusta el tamaño del canvas para que cubra toda la ventana
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+	let dots = document.querySelectorAll("[id^=dot-]");
+
+	// Dibuja la línea
+	ctx.beginPath();
+
+	const dot1 = document.getElementById("dot-1");
+	const center1 = getCenter(dot1);
+
+	ctx.moveTo(center1.x, center1.y);
+
+	for (let i = 1; i < dots.length; i++) {
+		const dot = dots[i];
+		const center = getCenter(dot);
+		ctx.lineTo(center.x, center.y);
+	}
+
+	ctx.strokeStyle = "#C2D9FF"; // color de la línea
+	ctx.lineWidth = 4; // grosor de la línea
+	ctx.stroke();
+
+	// Función para obtener el centro de un elemento
+	function getCenter(element) {
+		const rect = element.getBoundingClientRect();
+		return {
+			x: rect.left + rect.width / 2,
+			y: rect.top + rect.height / 2,
+		};
+	}
+}
