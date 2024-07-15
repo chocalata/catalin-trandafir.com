@@ -47,10 +47,21 @@ app.use(
 	"/lib/three/build/",
 	express.static(path.join(__dirname, "node_modules/three/build"))
 );
+
 app.use(
 	"/lib/three/examples/jsm/",
 	express.static(path.join(__dirname, "node_modules/three/examples/jsm"))
 );
+
+app.use(
+	"/lib/floating-ui/dom",
+	express.static(path.join(__dirname, "node_modules/@floating-ui/dom"))
+);
+app.use(
+	"/lib/floating-ui/core",
+	express.static(path.join(__dirname, "node_modules/@floating-ui/core"))
+);
+
 
 //CSS paths
 app.use("/css", express.static(__dirname + "/public/css"));

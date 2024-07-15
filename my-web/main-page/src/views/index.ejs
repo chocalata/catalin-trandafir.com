@@ -23,9 +23,24 @@
 				}
 			}
 		</script>
+		<!--importing floating-ui/dom-->
+		<!--script src="../lib/floating-ui/core/dist/floating-ui.core.umd.min.js"></script-->
+
+		<!--script- src="../lib/floating-ui/dom/dist/floating-ui.dom.umd.min.js"></script-->
 	</head>
 	<body>
 		<canvas id="bg"></canvas>
+		<button id="button" aria-describedby="tooltip">
+			button
+		</button>
+		<div id="tooltip" role="tooltip" style="background: #222;
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 90%;">
+			<p>Tooltip</p>
+		</div>
 		<main>
 			<header id="header-menu">
 				<a href="#intro" id="logo">
@@ -94,17 +109,37 @@
 									</a>
 								</h2>
 								<p><%= work.work_description %></p>
-								<% work.technologies.forEach((tech, index,
-								array) => { %>
-								<div class="icon-box">
+								<% for (let i = 0; i < work.technologies.length && i < 4; i++) { %>
+								<% tech = work.technologies[i] %>
+								<div class="techs-icon-box">
 									<%= tech.name %>
 									<img
 										class="tech-svg"
-										src="/img/tech/<%= tech.file %>.svg"
+										src="/img/tech/<%= tech.name %>.svg"
 										alt="<%= tech.name %>"
 									/>
 								</div>
-								<% }) %>
+								<% } %>
+								<div>
+									<% if (work.technologies.length > 4) { %>
+									<div class="more-techs">
+										<%= work.technologies.length - 4 %> more...
+										<div class="more-techs-tooltip">
+											<% for (let i = 4; i < work.technologies.length; i++) { %>
+											<% tech = work.technologies[i] %>
+											<div class="techs-icon-box">
+												<%= tech.name %>
+												<img
+													class="tech-svg"
+													src="/img/tech/<%= tech.name %>.svg"
+													alt="<%= tech.name %>"
+												/>
+											</div>
+											<% } %>
+										</div>
+									</div>
+									<% } %>
+								</div>
 							</div>
 						</div>
 						<% }) %>
@@ -112,7 +147,7 @@
 				</div>
 				<div class="row-3"></div>
 			</section>
-			<section id="projects">
+			<!--section id="projects">
 				<div class="row-1">
 					<h2>Projects</h2>
 				</div>
@@ -127,7 +162,7 @@
 				<div class="row-2">
 					<p>Here are some ways to contact me</p>
 				</div>
-			</section>
+			</section-->
 		</main>
 		<!--footer>
 			<p>

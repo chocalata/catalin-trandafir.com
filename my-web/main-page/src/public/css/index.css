@@ -43,14 +43,15 @@ canvas {
 #logo {
     position: fixed;
     left: 2vw;
-    
+
 }
 
 #logo img {
     height: 50px;
 }
 
-.menu li a, .menu li img {
+.menu li a,
+.menu li img {
     text-decoration: none;
     margin: 0 10px;
     padding: 10px 20px;
@@ -61,7 +62,7 @@ canvas {
     /* Prevent "About me" to overflow */
 }
 
-.menu li *:hover{
+.menu li *:hover {
     color: black;
     background-color: white;
 }
@@ -92,7 +93,7 @@ section {
 }
 
 section#intro {
-    grid-template-rows: 1fr 1fr auto;    
+    grid-template-rows: 1fr 1fr auto;
 }
 
 #big-logo {
@@ -118,7 +119,7 @@ section#intro {
     margin-right: auto;
 }
 
-#intro-menu nav ul{
+#intro-menu nav ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
@@ -157,7 +158,7 @@ section#about-me {
     margin-bottom: 0;
 }
 
-#about-me .row-1 h2{
+#about-me .row-1 h2 {
     font-size: 5vh;
 }
 
@@ -180,7 +181,7 @@ section#about-me {
     margin-top: 1vh;
 }
 
-.icon-box {
+.techs-icon-box {
     float: right;
     background-color: #f5f5f5;
     color: #000;
@@ -192,14 +193,43 @@ section#about-me {
     transition: transform 0.3s ease;
 }
 
+.techs-icon-box:hover {
+    transform: translateY(-5px);
+}
+
+.more-techs {
+    float: right;
+    background-color: #000;
+    border: 2px solid #C2D9FF;
+    color: #f5f5f5;
+    border-radius: 20%;
+    padding: 7px;
+    margin: 5px;
+}
+
+.more-techs-tooltip {
+    visibility: hidden;
+    border: 2px solid #f5f5f5;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    white-space: nowrap;
+    white-space: nowrap;
+    /* Añadido para evitar que el texto se rompa en varias líneas */
+    top: 100%;
+    /* Ajustado para posicionar correctamente el tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.more-techs:hover .more-techs-tooltip {
+    visibility: visible;
+}
+
 .tech-svg {
     width: 25px;
     height: 25px;
     vertical-align: middle;
-}
-
-.icon-box:hover {
-    transform: translateY(-5px);
 }
 
 dot {
@@ -214,6 +244,7 @@ dot {
 .right dot {
     float: left;
 }
+
 .right .content {
     float: left;
     width: calc(100% - 45px);
@@ -277,14 +308,14 @@ dot {
         margin-left: auto;
         margin-right: auto;
     }
+
     #intro .row-1 {
         padding-top: 5vh;
     }
 }
 
-@media screen and (max-width: 310px){
+@media screen and (max-width: 310px) {
     #big-logo {
         max-height: 25vh;
     }
 }
-

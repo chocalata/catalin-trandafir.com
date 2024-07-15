@@ -26,6 +26,7 @@
 		"three": "^0.166.1"
 	},
 	"devDependencies": {
-		"nodemon": "^3.1.4"
+		"nodemon": "^3.1.4",
+		"@floating-ui/dom": "^1.6.7"
 	}
 }

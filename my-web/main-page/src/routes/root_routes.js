@@ -1,3 +1,14 @@
+/*
+PUE all techs:
+Docker
+Python
+Node.js
+Express.js
+MySQL
+Redis
+Linux
+HTML5
+*/
 workData = [
 	{
 		position: "left",
@@ -8,7 +19,6 @@ workData = [
 		technologies: [
 			{
 				name: "Java",
-				file: "java",
 			},
 		],
 	},
@@ -17,11 +27,31 @@ workData = [
 		company_name: "PUE",
 		company_url: "https://pue.es/",
 		work_description:
-			"Descripción del Trabajo 2. Aquí puedes incluir detalles sobre las responsabilidades, logros y cualquier otra información relevante.",
+			"Performing the role of Full-stack and Systems Administrator, providing efficient solutions for the development and maintenance of systems. I handle both front-end and back-end, along with effective infrastructure management to ensure optimal performance.",
 		technologies: [
 			{
-				name: "Java",
-				file: "java",
+				name: "Docker",
+			},
+			{
+				name: "Python",
+			},
+			{
+				name: "Node.js",
+			},
+			{
+				name: "Express.js",
+			},
+			{
+				name: "MySQL",
+			},
+			{
+				name: "Redis",
+			},
+			{
+				name: "Linux",
+			},
+			{
+				name: "HTML5",
 			},
 		],
 	},
@@ -30,11 +60,37 @@ workData = [
 		company_name: "I+D+I PUE",
 		company_url: "https://pue.es/",
 		work_description:
-			"Descripción del Trabajo 2. Aquí puedes incluir detalles sobre las responsabilidades, logros y cualquier otra información relevante.",
+			"Additionally, I have taken on the position of Researcher in Research, Development, and Innovation (I+D+I), contributing to the exploration of new technologies and methodologies to enhance our projects and stay at the forefront of innovation. I continue to fulfill the role of Full-stack and Systems Administrator.",
 		technologies: [
 			{
-				name: "Java",
-				file: "java",
+				name: "Kubernetes",
+			},
+			{
+				name: "AWS",
+			},
+			{
+				name: "Docker",
+			},
+			{
+				name: "Python",
+			},
+			{
+				name: "Node.js",
+			},
+			{
+				name: "Express.js",
+			},
+			{
+				name: "MySQL",
+			},
+			{
+				name: "Redis",
+			},
+			{
+				name: "Linux",
+			},
+			{
+				name: "HTML5",
 			},
 		],
 	},
