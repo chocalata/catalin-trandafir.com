@@ -71,7 +71,6 @@ section {
     padding-top: 75px;
     margin-top: -75px;
     display: grid;
-    height: 100vh;
     grid-template-columns: 1fr 8fr 1fr;
     z-index: 2;
 }
@@ -94,6 +93,7 @@ section {
 
 section#intro {
     grid-template-rows: 1fr 1fr auto;
+    height: 100vh;
 }
 
 #big-logo {
@@ -181,57 +181,6 @@ section#about-me {
     margin-top: 1vh;
 }
 
-.techs-icon-box {
-    float: right;
-    background-color: #f5f5f5;
-    color: #000;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 20%;
-    padding: 7px;
-    margin: 5px;
-    transition: transform 0.3s ease;
-}
-
-.techs-icon-box:hover {
-    transform: translateY(-5px);
-}
-
-.more-techs {
-    float: right;
-    background-color: #000;
-    border: 2px solid #C2D9FF;
-    color: #f5f5f5;
-    border-radius: 20%;
-    padding: 7px;
-    margin: 5px;
-}
-
-.more-techs-tooltip {
-    visibility: hidden;
-    border: 2px solid #f5f5f5;
-    background-color: black;
-    position: absolute;
-    z-index: 1;
-    white-space: nowrap;
-    white-space: nowrap;
-    /* Añadido para evitar que el texto se rompa en varias líneas */
-    top: 100%;
-    /* Ajustado para posicionar correctamente el tooltip */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.more-techs:hover .more-techs-tooltip {
-    visibility: visible;
-}
-
-.tech-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-}
-
 dot {
     width: 25px;
     height: 25px;
@@ -260,31 +209,87 @@ dot {
     width: calc(100% - 45px);
 }
 
-.left {
+.left, .right {
+    clear: both;
+}
+
+.left, .right .techs {
     float: left;
-    clear: both;
 }
 
-.right {
+.right, .left .techs {
     float: right;
-    clear: both;
 }
 
+.techs-icon-box {
+    background-color: #f5f5f5;
+    color: #000;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20%;
+    padding: 7px;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
 
-@media screen and (max-width: 540px) {
-    #header-menu {
-        justify-content: right;
-    }
+.techs-icon-box:hover {
+    transform: translateY(-5px);
+}
 
-    .nav-menu {
-        display: block;
-    }
+.more-techs {
+    background-color: #000;
+    border: 2px solid #C2D9FF;
+    color: #f5f5f5;
+    border-radius: 20%;
+    padding: 7px;
+    margin: 5px;
+}
 
-    .menu-option {
-        display: none;
-    }
+.more-techs-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    padding: 5px;
+    border: 2px solid #f5f5f5;
+    white-space: nowrap;
+    min-width: 300px;
+    z-index: 1;
+    transition: opacity 300ms;
+}
 
-    .left dot {
+.more-techs:hover {
+    background-color: #C2D9FF;
+    color: #000;
+}
+
+.more-techs:hover .more-techs-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tech-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+section#projects {
+    grid-template-rows: auto 1fr auto;
+}
+
+#projects .row-1 {
+    margin-bottom: 0;
+}
+
+#projects .row-1 h2 {
+    font-size: 5vh;
+}
+
+@media screen and (max-width: 750px) {
+    .left dot, .left .techs {
         float: left;
     }
 
@@ -302,7 +307,22 @@ dot {
     }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 540px) {
+    #header-menu {
+        justify-content: right;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .menu-option {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 487px) {
     #intro-menu nav ul li {
         margin-bottom: 25px;
         margin-left: auto;
@@ -314,7 +334,7 @@ dot {
     }
 }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 350px) {
     #big-logo {
         max-height: 25vh;
     }

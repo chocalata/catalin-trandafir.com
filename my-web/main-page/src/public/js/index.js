@@ -1,14 +1,5 @@
 import * as THREE from "three";
 
-import { computePosition } from "../lib/floating-ui/dom/dist/floating-ui.dom.esm.js";
-
-computePosition(button, tooltip).then(({x, y}) => {
-  Object.assign(tooltip.style, {
-    left: `${x}px`,
-    top: `${y}px`,
-  });
-});
-
 var introMenu = document.getElementById("intro-menu");
 var headerMenu = document.getElementById("header-menu");
 
@@ -162,5 +153,3 @@ function showJobLine() {
 		};
 	}
 }
-
-

@@ -53,15 +53,27 @@ app.use(
 	express.static(path.join(__dirname, "node_modules/three/examples/jsm"))
 );
 
+/*/Inserting floating-ui library
 app.use(
-	"/lib/floating-ui/dom",
-	express.static(path.join(__dirname, "node_modules/@floating-ui/dom"))
-);
-app.use(
-	"/lib/floating-ui/core",
-	express.static(path.join(__dirname, "node_modules/@floating-ui/core"))
+	"/floating-ui",
+	express.static(path.join(__dirname, "node_modules/@floating-ui/dom/dist"))
 );
 
+//Inserting floating-ui library
+app.use(
+	"/floating-ui",
+	express.static(path.join(__dirname, "node_modules/@floating-ui/core/dist"))
+);
+*/
+app.use(
+	"/js/floating-ui/",
+	express.static(path.join(__dirname, "node_modules/@floating-ui/dom/dist"))
+);
+
+app.use(
+	"/js/floating-ui/",
+	express.static(path.join(__dirname, "node_modules/@floating-ui/core/dist"))
+);
 
 //CSS paths
 app.use("/css", express.static(__dirname + "/public/css"));
