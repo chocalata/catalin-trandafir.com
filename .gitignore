@@ -107,3 +107,4 @@ dist
 
 #MY CONFIG
 .prettierignore
+package-lock.json
