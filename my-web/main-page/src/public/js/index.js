@@ -2,6 +2,7 @@ import * as THREE from "three";
 
 var introMenu = document.getElementById("intro-menu");
 var headerMenu = document.getElementById("header-menu");
+var dropdownMenu = document.getElementById("dropdown-menu");
 
 const canvas = document.querySelector("#bg");
 
@@ -92,6 +93,7 @@ window.addEventListener("scroll", () => {
 function showHeader() {
 	if (isScrolledIntoView(introMenu)) {
 		headerMenu.style.visibility = "hidden";
+		dropdownMenu.style.visibility = "hidden";
 	} else {
 		headerMenu.style.visibility = "visible";
 	}
@@ -108,12 +110,28 @@ function isScrolledIntoView(elem) {
 	return elemBottom <= docViewBottom && elemTop >= docViewTop;
 }
 
-document.getElementById("img-menu").addEventListener("mouseover", (element) => {
-	element.target.src = "img/menu-black.svg";
+/*document.getElementById("img-menu").addEventListener("mouseover", (element) => {
+	element.target.src = "/img/menu-black.svg";
 });
 
 document.getElementById("img-menu").addEventListener("mouseout", (element) => {
-	element.target.src = "img/menu.svg";
+	element.target.src = "/img/menu-white.svg";
+});*/
+
+//On click menu-dropdown-icon change visibility of the menu
+document.getElementById("dropdown-menu-icon").addEventListener("click", () => {
+	if (dropdownMenu.style.visibility === "visible") {
+		dropdownMenu.style.visibility = "hidden";
+	} else {
+		dropdownMenu.style.visibility = "visible";
+	}
+});
+
+//On @media screen and (max-width: 540px) change visibility of the menu
+window.addEventListener("resize", () => {
+	if (window.innerWidth > 540) {
+		dropdownMenu.style.visibility = "hidden";
+	}
 });
 
 function showJobLine() {

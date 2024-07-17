@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth
 }
 
+body {
+    background-color: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,13 +35,62 @@ canvas {
     visibility: hidden;
 }
 
+
 #header-menu nav ul {
     display: flex;
     list-style-type: none;
 }
 
+#dropdown-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 100;
+    visibility: hidden;
+}
+
+#dropdown-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: #fff solid 3px;
+    text-decoration: none;
+    white-space: nowrap;
+    /* Prevent "About me" to overflow */
+}
+
+.dropdown-menu a li p {
+    font-size: 5vh;
+    /*text-decoration: none;*/
+    white-space: nowrap;
+    /* Prevent "About me" to overflow */
+}
+
+.dropdown-menu a *:hover, .dropdown-menu a:hover {
+    color: black;
+    background-color: white;
+}
+
 .nav-menu {
     display: none;
+}
+
+#dropdown-menu-icon {
+    background-color: #000;
+}
+
+#dropdown-menu-icon:hover{
+    fill: #000;
+    background-color: #f5f5f5;
 }
 
 #logo {
@@ -51,7 +104,7 @@ canvas {
 }
 
 .menu li a,
-.menu li img {
+#dropdown-menu-icon {
     text-decoration: none;
     margin: 0 10px;
     padding: 10px 20px;
@@ -114,7 +167,7 @@ section#intro {
 }
 
 #intro .row-2 {
-    padding-top: 8vh;
+    padding-top: 12vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -319,7 +372,8 @@ section#projects {
     .menu-option {
         display: none;
     }
-
+    
+    
 }
 
 @media screen and (max-width: 487px) {

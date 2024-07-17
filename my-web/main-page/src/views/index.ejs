@@ -9,6 +9,7 @@
 		<!--GIFS NOT WORKING ON ALL BROWSERS-->
 		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
+
 		<!--IMPORT MAP-->
 		<!-- Remove this when import maps will be widely supported -->
 		<!--script
@@ -34,7 +35,6 @@
 				<a href="#intro" id="logo">
 					<img src="/img/logo.svg" alt="Logo" />
 				</a>
-
 				<nav>
 					<ul class="menu">
 						<li class="menu-option">
@@ -47,11 +47,48 @@
 							<a href="#contact">Contact</a>
 						</li>
 						<li class="nav-menu">
-							<img id="img-menu" src="/img/menu.svg" alt="Menu" />
+							<!--img
+							id="img-menu"
+							src="/img/menu-white.svg"
+							alt="Menu"
+						/-->
+							<svg
+								id="dropdown-menu-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								height="24"
+								viewBox="0 -960 960 960"
+								width="24"
+								fill="#C2D9FF"
+							>
+								<path
+									d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+								/>
+							</svg>
 						</li>
 					</ul>
 				</nav>
 			</header>
+			<div id="dropdown-menu">
+				<nav>
+					<ul class="dropdown-menu">
+						<a href="#about-me">
+							<li class="dropdown-menu-option">
+								<p>About me</p>
+							</li>
+						</a>
+						<a href="#projects">
+							<li class="dropdown-menu-option">
+								<p>Projects</p>
+							</li>
+						</a>
+						<a href="#contact">
+							<li class="dropdown-menu-option">
+								<p>Contact</p>
+							</li>
+						</a>
+					</ul>
+				</nav>
+			</div>
 			<section id="intro">
 				<div class="row-1">
 					<img id="big-logo" src="/img/logo.svg" alt="Logo" />
@@ -140,7 +177,7 @@
 			</section>
 			<section id="projects">
 				<div class="row-1">
-					<h2>Projects</h2>
+					<h2 class="highlight">Projects</h2>
 				</div>
 				<div class="row-2">
 					<p>Here are some of my projects</p>
