@@ -110,6 +110,17 @@ module.exports = function routes(log) {
 		res.render("index", { workData: workData });
 	});
 
+	router.post("/contact", testCheck, async function (req, res) {
+		log.info("PATH: /contact");
+
+		log.info(req.body);
+
+		res.send({
+			status: "success",
+			message: "Message sent successfully",
+		});
+	});
+
 	router.all("/*", (req, res) => {
 		res.redirect("/");
 	});

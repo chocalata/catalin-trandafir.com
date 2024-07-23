@@ -10,12 +10,15 @@
 		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 
+		<!--reCaptcha-->
+		<script async src="https://www.google.com/recaptcha/api.js"></script>
+
 		<!--IMPORT MAP-->
 		<!-- Remove this when import maps will be widely supported -->
 		<!--script
         async
         src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js">
-    </script-->
+    	</script-->
 		<script type="importmap">
 			{
 				"imports": {
@@ -183,32 +186,55 @@
 					<p>Here are some of my projects</p>
 				</div>
 			</section>
-			<section id="contact">
+			<!--section id="contact">
 				<div class="row-1">
 					<h2>Contact</h2>
 				</div>
 				<div class="row-2">
 					<p>Here are some ways to contact me</p>
 				</div>
-			</section>
-		</main>
-		<!--footer>
-			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-				Aliquam sint recusandae eveniet id et delectus, explicabo nam
-				eum dolorum iste doloribus perferendis architecto reiciendis hic
-				ex unde ducimus deleniti ullam! Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Quia, quis. Tempore nobis, a cum
-				consequatur quis expedita similique sequi asperiores, possimus
-				fuga debitis ratione voluptate aperiam! Minima, delectus?
-				Reprehenderit, veritatis. Lorem ipsum dolor sit amet
-				consectetur, adipisicing elit. Fuga maxime illum natus quaerat
-				atque corrupti assumenda possimus, quia animi iure modi enim
-				praesentium architecto. Earum aut maiores eos velit dolor? Lorem
-				ipsum dolor sit amet cons
-			</p>
-		</footer-->
+			</section-->
 
+			<section id="contact">
+				<div class="row-1">
+					<h2 class="highlight">Contact</h2>
+				</div>
+				<div class="row-2">
+					<form id="contact-form" action="/contact" method="post">
+						<div id="form-group-name" class="form-group">
+							<label for="form-name">Name:</label>
+							<input
+								type="text"
+								id="form-name"
+								name="name"
+								value="testing"
+								required
+							/>
+						</div>
+						<div id="form-group-email" class="form-group">
+							<label for="form-email">Email:</label>
+							<input
+								type="email"
+								id="form-email"
+								name="email"
+								value="testing@catain-trandafir.com"
+								required
+							/>
+						</div>
+						<div id="form-group-message" class="form-group">
+							<label for="form-message">Message:</label>
+							<textarea id="form-message" name="message" required>
+testing</textarea
+							>
+						</div>
+						<button type="submit">Send</button>
+					</form>
+				</div>
+			</section>
+			<footer>
+				<p>Made by <b class="highlight">Catalin Trandafir</b></p>
+			</footer>
+		</main>
 		<script type="module" charset="utf8" src="/js/index.js"></script>
 		<script
 			type="module"
