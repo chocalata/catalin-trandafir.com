@@ -31,13 +31,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Securing app with helmet, recommended practice by Express
 app.use(
-	//Executing drive videos.
 	helmet.contentSecurityPolicy({
 		directives: {
 			defaultSrc: ["'self'"],
 			mediaSrc: ["'self'"],
-			scriptSrc: ["'self'"],
-			scriptSrcElem: ["'self'", "'unsafe-inline'"],
+			scriptSrc: [
+				"'self'",
+				"https://www.google.com",
+				"https://www.gstatic.com",
+				"'unsafe-inline'",
+			],
+			scriptSrcElem: [
+				"'self'",
+				"https://www.google.com",
+				"https://www.gstatic.com",
+				"'unsafe-inline'",
+			],
+			frameSrc: ["'self'", "https://www.google.com"],
 		},
 	})
 );

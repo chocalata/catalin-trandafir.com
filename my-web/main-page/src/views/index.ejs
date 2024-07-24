@@ -10,9 +10,6 @@
 		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 
-		<!--reCaptcha-->
-		<script async src="https://www.google.com/recaptcha/api.js"></script>
-
 		<!--IMPORT MAP-->
 		<!-- Remove this when import maps will be widely supported -->
 		<!--script
@@ -200,14 +197,13 @@
 					<h2 class="highlight">Contact</h2>
 				</div>
 				<div class="row-2">
-					<form id="contact-form" action="/contact" method="post">
+					<form id="contact-form">
 						<div id="form-group-name" class="form-group">
 							<label for="form-name">Name:</label>
 							<input
 								type="text"
 								id="form-name"
 								name="name"
-								value="testing"
 								required
 							/>
 						</div>
@@ -217,17 +213,18 @@
 								type="email"
 								id="form-email"
 								name="email"
-								value="testing@catain-trandafir.com"
 								required
 							/>
 						</div>
 						<div id="form-group-message" class="form-group">
 							<label for="form-message">Message:</label>
-							<textarea id="form-message" name="message" required>
-testing</textarea
-							>
+							<textarea
+								id="form-message"
+								name="message"
+								required
+							></textarea>
 						</div>
-						<button type="submit">Send</button>
+						<button id="submit-form" type="submit">Send</button>
 					</form>
 				</div>
 			</section>
@@ -241,5 +238,7 @@ testing</textarea
 			charset="utf8"
 			src="/js/index-tooltip.js"
 		></script>
+		<!--reCaptcha-->
+		<script src="https://www.google.com/recaptcha/api.js?data-theme=dark&render=6Lf3KxUqAAAAAH6iIdbD4AvJ5_sFfQiMW8l2EEYQ"></script>
 	</body>
 </html>

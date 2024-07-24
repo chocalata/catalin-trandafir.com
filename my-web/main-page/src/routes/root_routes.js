@@ -1,14 +1,5 @@
-/*
-PUE all techs:
-Docker
-Python
-Node.js
-Express.js
-MySQL
-Redis
-Linux
-HTML5
-*/
+const axios = require("axios");
+
 workData = [
 	{
 		position: "left",
@@ -99,26 +90,59 @@ workData = [
 module.exports = function routes(log) {
 	const router = require("express").Router();
 
-	function testCheck(req, res, next) {
-		log.info("testCheck()");
-		log.info(req.body);
-		next();
-	}
+	const reCaptchaMiddleware = async function (req, res, next) {
+		const token = req.body["g-recaptcha-response"];
 
-	router.get("/", testCheck, async function (req, res) {
+		if (!token) {
+			return res.status(400).json({
+				success: false,
+				message: "reCAPTCHA token is missing",
+			});
+		}
+
+		try {
+			const response = await axios.post(
+				`https://www.google.com/recaptcha/api/siteverify`,
+				null,
+				{
+					params: {
+						secret: process.env.RECAPTCHA_SECRET_KEY,
+						response: token,
+						remoteip: req.ip, // Opcional: dirección IP del usuario
+					},
+				}
+			);
+
+			const data = response.data;
+
+			if (data.success) {
+				// Aquí puedes manejar el envío del formulario si el reCAPTCHA es válido
+
+				next();
+			} else {
+				res.status(400).json({
+					success: false,
+					message: "reCAPTCHA verification failed",
+					errorCodes: data["error-codes"],
+				});
+			}
+		} catch (error) {
+			res.status(500).json({
+				success: false,
+				message: "Error verifying reCAPTCHA",
+				error: error.message,
+			});
+		}
+	};
+
+	router.get("/", async function (req, res) {
 		log.info("PATH: /");
 		res.render("index", { workData: workData });
 	});
 
-	router.post("/contact", testCheck, async function (req, res) {
+	router.post("/contact", reCaptchaMiddleware, async function (req, res) {
 		log.info("PATH: /contact");
-
-		log.info(req.body);
-
-		res.send({
-			status: "success",
-			message: "Message sent successfully",
-		});
+		res.status(200).send("DONE");
 	});
 
 	router.all("/*", (req, res) => {

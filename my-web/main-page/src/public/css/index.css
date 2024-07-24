@@ -75,7 +75,7 @@ canvas {
     /* Prevent "About me" to overflow */
 }
 
-.dropdown-menu a *:hover,
+.dropdown-menu a:hover *,
 .dropdown-menu a:hover {
     color: black;
     background-color: white;
@@ -400,7 +400,7 @@ section#contact {
     padding: 1rem;
 }
 
-button[type="submit"] {
+#submit-form {
     background-color: #000;
     color: #c2d9ff;
     border: 2px solid #c2d9ff;
@@ -410,9 +410,14 @@ button[type="submit"] {
     transition: background-color 0.3s, color 0.3s;
 }
 
-button[type="submit"]:hover {
+#submit-form:hover {
     background-color: #c2d9ff;
     color: #000;
+}
+
+#submit-form:disabled {
+    background-color: #6e6e6e;
+    
 }
 
 footer {
@@ -467,7 +472,7 @@ footer {
     #form-group-message {
         grid-area: 3 / 1 / 4 / 3;
     }
-    button[type="submit"]{
+    #submit-form{
         grid-area: 4 / 1 / 5 / 3;
     }
         

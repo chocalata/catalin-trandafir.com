@@ -172,18 +172,66 @@ function showJobLine() {
 	}
 }
 
+document.querySelectorAll(".dropdown-menu a").forEach((e) => {
+	e.addEventListener("click", (e) => {
+		//set invisible the dropdown menu
+		dropdownMenu.style.visibility = "hidden";
+	});
+});
+
+function sendingContactData(sending) {
+	let button = document.getElementById("submit-form");
+	button.disabled = sending;
+
+	if (sending) {
+		button.innerHTML =
+			'<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"> <path fill="#5e76ff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"> <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite" /> </path> </svg>';
+	} else button.innerHTML = "Send";
+}
+
 document
 	.getElementById("contact-form")
 	.addEventListener("submit", function (e) {
 		e.preventDefault();
+
+		sendingContactData(true);
+
 		grecaptcha.ready(function () {
 			grecaptcha
-
 				.execute("6Lf3KxUqAAAAAH6iIdbD4AvJ5_sFfQiMW8l2EEYQ", {
 					action: "submit",
 				})
 				.then(function (token) {
-					console.log("token: ", token);
+					// Collect form data
+					const form = document.getElementById("contact-form");
+					const formData = new URLSearchParams(new FormData(form));
+					formData.append("g-recaptcha-response", token);
+
+					// Send form data to the server via fetch API
+					fetch("/contact", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded",
+							Accept: "application/json",
+						},
+						body: formData.toString(),
+					})
+						.then((response) => {
+							if (response.ok) {
+								return response.text();
+							}
+
+							throw new Error("Something went wrong.");
+						})
+						.then((data) => {
+							sendingContactData(false);
+							alert("Thank you for your message!");
+						})
+						.catch((error) => {
+							console.error("Error:", error);
+							sendingContactData(false);
+							alert("Sorry, something went wrong. D:");
+						});
 				});
 		});
 	});
