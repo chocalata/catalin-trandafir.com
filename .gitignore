@@ -108,5 +108,3 @@ dist
 #MY CONFIG
 .prettierignore
 package-lock.json
-my-web/main-page/src/whatsapp-data/cache/*
-my-web/main-page/src/whatsapp-data/session/*
