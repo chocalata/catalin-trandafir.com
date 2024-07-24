@@ -1,5 +1,8 @@
-FROM node:19
+FROM node:20
 RUN apt update && apt -y upgrade
+COPY WhatsAppDebianChromeDependencies.txt /WhatsAppDebianChromeDependencies.txt
+#RUN apt install -y libnss3 libatk-1.0
+RUN xargs -a /WhatsAppDebianChromeDependencies.txt apt install -y --fix-missing
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY src/ /usr/src/app/

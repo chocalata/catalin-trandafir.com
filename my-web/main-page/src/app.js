@@ -1,3 +1,5 @@
+const WhatsAppController = require("./models/WhatsAppController");
+
 const express = require("express");
 
 const path = require("path");
@@ -18,7 +20,9 @@ const log = new Logger({
 	],
 });
 
-const root_routes = require("./routes/root_routes")(log);
+const whatsApp = new WhatsAppController(log);
+
+const root_routes = require("./routes/root_routes")(log, whatsApp);
 
 //EXPRESS
 const app = express();
@@ -105,6 +109,16 @@ app.use("/", root_routes);
 
 app.listen(process.env.PORT, () => {
 	console.log(
-		"Express is running on port " + process.env.PORT + " at " + Date()
+		"################################################################################\n################################################################################"
+	);
+	console.log(
+		"## Express is running on port " +
+			process.env.PORT +
+			" at " +
+			Date() +
+			" ##"
+	);
+	console.log(
+		"################################################################################\n################################################################################"
 	);
 });

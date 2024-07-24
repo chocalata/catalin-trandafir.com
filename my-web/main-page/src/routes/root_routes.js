@@ -87,7 +87,7 @@ workData = [
 	},
 ];
 
-module.exports = function routes(log) {
+module.exports = function routes(log, whatsApp) {
 	const router = require("express").Router();
 
 	const reCaptchaMiddleware = async function (req, res, next) {
@@ -142,6 +142,20 @@ module.exports = function routes(log) {
 
 	router.post("/contact", reCaptchaMiddleware, async function (req, res) {
 		log.info("PATH: /contact");
+
+		const { name, email, message } = req.body;
+
+		if (!name || !email || !message) {
+			return res.status(400).json({
+				success: false,
+				message: "Missing required fields",
+			});
+		}
+
+		const messageToSend = `Hey,\n\nHa llegado un nuevo mensaje de *${name} (${email})*:\n> ${message}`;
+
+		whatsApp.sendMessage(messageToSend);
+
 		res.status(200).send("DONE");
 	});
 

@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 node:19
+FROM --platform=linux/arm64 node:20
 RUN apt update && apt -y upgrade
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

@@ -10,6 +10,9 @@
 		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 
+		<!--reCaptcha-->
+		<script src="https://www.google.com/recaptcha/api.js?render=<%= process.env.RECAPTCHA_SITE_KEY %>"></script>
+
 		<!--IMPORT MAP-->
 		<!-- Remove this when import maps will be widely supported -->
 		<!--script
@@ -232,13 +235,15 @@
 				<p>Made by <b class="highlight">Catalin Trandafir</b></p>
 			</footer>
 		</main>
+		<!-- load the RECAPTCHA_SITE_KEY -->
+		<script>
+			const RECAPTCHA_SITE_KEY = "<%= process.env.RECAPTCHA_SITE_KEY %>";
+		</script>
 		<script type="module" charset="utf8" src="/js/index.js"></script>
 		<script
 			type="module"
 			charset="utf8"
 			src="/js/index-tooltip.js"
 		></script>
-		<!--reCaptcha-->
-		<script src="https://www.google.com/recaptcha/api.js?data-theme=dark&render=6Lf3KxUqAAAAAH6iIdbD4AvJ5_sFfQiMW8l2EEYQ"></script>
 	</body>
 </html>

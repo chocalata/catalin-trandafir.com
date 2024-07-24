@@ -198,7 +198,7 @@ document
 
 		grecaptcha.ready(function () {
 			grecaptcha
-				.execute("6Lf3KxUqAAAAAH6iIdbD4AvJ5_sFfQiMW8l2EEYQ", {
+				.execute(RECAPTCHA_SITE_KEY, {
 					action: "submit",
 				})
 				.then(function (token) {
