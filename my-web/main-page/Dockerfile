@@ -1,5 +1,15 @@
-FROM --platform=linux/arm64 node:20
+FROM node:20
 RUN apt update && apt -y upgrade
+COPY debian-dependencies-chrome-whatsappweb.txt /debian-dependencies-chrome-whatsappweb.txt
+
+# Debug connectivity
+#RUN apt install -y curl && curl -I http://deb.debian.org/debian/
+
+RUN until xargs -a /debian-dependencies-chrome-whatsappweb.txt apt install -y --fix-missing; do \
+    echo "Retrying apt install..."; \
+    sleep 2; \
+    done
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY src/ /usr/src/app/

@@ -1,8 +1,15 @@
 FROM node:20
 RUN apt update && apt -y upgrade
-COPY WhatsAppDebianChromeDependencies.txt /WhatsAppDebianChromeDependencies.txt
-#RUN apt install -y libnss3 libatk-1.0
-RUN xargs -a /WhatsAppDebianChromeDependencies.txt apt install -y --fix-missing
+COPY debian-dependencies-chrome-whatsappweb.txt /debian-dependencies-chrome-whatsappweb.txt
+
+# Debug connectivity
+#RUN apt install -y curl && curl -I http://deb.debian.org/debian/
+
+RUN until xargs -a /debian-dependencies-chrome-whatsappweb.txt apt install -y --fix-missing; do \
+    echo "Retrying apt install..."; \
+    sleep 2; \
+    done
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY src/ /usr/src/app/
