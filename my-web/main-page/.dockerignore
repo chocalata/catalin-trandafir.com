@@ -1,2 +1,5 @@
 node_modules
 package-lock.json
+src/whatsapp-data/cache/*
+src/whatsapp-data/session/*
+src/whatsapp-data/README.md

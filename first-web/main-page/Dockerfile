@@ -1,8 +1,8 @@
-FROM --platform=linux/arm64 node:19
+FROM node:20
 RUN apt update && apt -y upgrade
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY src/ /usr/src/app/
-RUN npm install
-EXPOSE 3000
+RUN npm install --production
+EXPOSE 3001
 CMD [ "npm", "run", "start"]
