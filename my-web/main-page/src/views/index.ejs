@@ -184,16 +184,52 @@
 				</div>
 				<div class="row-2">
 					<p>Here are some of my projects</p>
+					<div id="all-projects">
+						<% projectData.forEach((project, index, array) => { %>
+						<div class="project-card">
+							<img
+								class="project-image"
+								src="<%= project.image %>"
+								alt="Project Image"
+							/>
+							<h2><%= project.title %></h2>
+							<p><%= project.description %></p>
+							<% for (let i = 0; i < project.technologies.length
+							&& i < 4; i++) { %> <% tech =
+							project.technologies[i] %>
+							<div class="techs techs-icon-box">
+								<%= tech.name %>
+								<img
+									class="tech-svg"
+									src="/img/tech/<%= tech.name %>.svg"
+									alt="<%= tech.name %>"
+								/>
+							</div>
+							<% } %> <% if (project.technologies.length > 4) {%>
+							<div class="techs more-techs mt-<%=index%>">
+								<%= project.technologies.length - 4 %> more...
+								<div class="more-techs-tooltip mt-<%=index%>">
+									<% for (let j = 4; j <
+									project.technologies.length; j++) { %> <%
+									tech = work.technologies[j] %>
+
+									<div class="techs techs-icon-box">
+										<%= tech.name %>
+										<img
+											class="tech-svg"
+											src="/img/tech/<%= tech.name %>.svg"
+											alt="<%= tech.name %>"
+										/>
+									</div>
+									<% } %>
+								</div>
+							</div>
+							<% } %>
+						</div>
+						<% }); %>
+					</div>
 				</div>
 			</section>
-			<!--section id="contact">
-				<div class="row-1">
-					<h2>Contact</h2>
-				</div>
-				<div class="row-2">
-					<p>Here are some ways to contact me</p>
-				</div>
-			</section-->
 
 			<section id="contact">
 				<div class="row-1">
@@ -226,6 +262,22 @@
 								name="message"
 								required
 							></textarea>
+						</div>
+						<div id="recaptcha-branding">
+							<!-- Recaptcha branding -->
+							<p>
+								This site is
+								<b class="highlight">protected by reCAPTCHA</b>
+								and the Google
+								<a href="https://policies.google.com/privacy"
+									>Privacy Policy</a
+								>
+								and
+								<a href="https://policies.google.com/terms"
+									>Terms of Service</a
+								>
+								apply.
+							</p>
 						</div>
 						<button id="submit-form" type="submit">Send</button>
 					</form>

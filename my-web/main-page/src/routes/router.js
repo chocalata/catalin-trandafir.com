@@ -85,6 +85,69 @@ workData = [
 	},
 ];
 
+/*
+<div class="project-card">
+	<img class="project-image" src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Project Image">
+	<h2>Project Title</h2>
+	<p>Brief description of the project goes here. Explain the key features and technologies used.</p>
+	<div class="tech-stack">
+		<span class="tech-item">Tech 1</span>
+		<span class="tech-item">Tech 2</span>
+		<span class="tech-item">Tech 3</span>
+	</div>
+</div>
+*/
+projectData = [
+	{
+		title: "Project 1",
+		description: "This is the first project description.",
+		image: "/img/tech/Java.svg",
+		technologies: [
+			{
+				name: "Java",
+			},
+			{
+				name: "HTML5",
+			},
+			{
+				name: "Node.js",
+			},
+		],
+	},
+	{
+		title: "Project 2",
+		description: "This is the second project description.",
+		image: "/img/tech/HTML5.svg",
+		technologies: [
+			{
+				name: "Java",
+			},
+			{
+				name: "HTML5",
+			},
+			{
+				name: "Node.js",
+			},
+		],
+	},
+	{
+		title: "Project 3",
+		description: "This is the third project description.",
+		image: "/img/tech/Node.js.svg",
+		technologies: [
+			{
+				name: "Java",
+			},
+			{
+				name: "HTML5",
+			},
+			{
+				name: "Node.js",
+			},
+		],
+	},
+];
+
 module.exports = function routes(log, whatsApp) {
 	const router = require("express").Router();
 
@@ -92,7 +155,7 @@ module.exports = function routes(log, whatsApp) {
 
 	router.get("/", async function (req, res) {
 		log.info("PATH: /");
-		res.render("index", { workData: workData });
+		res.render("index", { workData: workData, projectData: projectData });
 	});
 
 	router.use("/", contact);
