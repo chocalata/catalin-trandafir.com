@@ -5,8 +5,7 @@
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
-		"local": "nodemon --legacy-watch app.js -e ejs,css,js",
-		"vercel-build": "echo 'hello'"
+		"local": "nodemon --legacy-watch app.js -e ejs,css,js"
 	},
 	"repository": {
 		"type": "git",

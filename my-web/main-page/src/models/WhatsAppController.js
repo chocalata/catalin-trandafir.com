@@ -4,6 +4,8 @@
 const { Client, LocalAuth } = require("whatsapp-web.js");
 const QRCode = require("qrcode");
 
+const path = require("path");
+
 const WHATSAPP_CHAT_WEB_CONTACT = process.env.WHATSAPP_CHAT_WEB_CONTACT;
 
 class WhatsAppController {
@@ -21,11 +23,11 @@ class WhatsAppController {
 				headless: true,
 			},
 			authStrategy: new LocalAuth({
-				dataPath: "whatsapp-data/",
+				dataPath: path.join(__dirname, "../whatsapp-data/"),
 			}),
 			webVersionCache: {
 				type: "local",
-				path: "whatsapp-data/cache/",
+				path: path.join(__dirname, "../whatsapp-data/cache/"),
 			},
 		});
 
