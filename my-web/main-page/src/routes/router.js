@@ -99,24 +99,22 @@ workData = [
 */
 projectData = [
 	{
-		title: "Project 1",
-		description: "This is the first project description.",
-		image: "/img/tech/Java.svg",
+		title: "Apolo X",
+		description:
+			"This was my first project. It's a videogame with a single player and multiplayer mode. Made as a final project for the course with Alberto Gutierro.",
+		github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
+		image: "/img/projects/ApoloX.png",
 		technologies: [
 			{
 				name: "Java",
-			},
-			{
-				name: "HTML5",
-			},
-			{
-				name: "Node.js",
 			},
 		],
 	},
 	{
 		title: "Project 2",
 		description: "This is the second project description.",
+		github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
+
 		image: "/img/tech/HTML5.svg",
 		technologies: [
 			{
@@ -128,11 +126,19 @@ projectData = [
 			{
 				name: "Node.js",
 			},
+			{
+				name: "Node.js",
+			},
+			{
+				name: "Node.js",
+			},
 		],
 	},
 	{
 		title: "Project 3",
 		description: "This is the third project description.",
+		github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
+
 		image: "/img/tech/Node.js.svg",
 		technologies: [
 			{
@@ -140,6 +146,12 @@ projectData = [
 			},
 			{
 				name: "HTML5",
+			},
+			{
+				name: "Node.js",
+			},
+			{
+				name: "Node.js",
 			},
 			{
 				name: "Node.js",

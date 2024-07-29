@@ -150,10 +150,10 @@
 								</div>
 								<% } %> <% if (work.technologies.length > 4) {
 								%>
-								<div class="techs more-techs mt-<%=index%>">
+								<div class="techs more-techs am-mt-<%=index%>">
 									<%= work.technologies.length - 4 %> more...
 									<div
-										class="more-techs-tooltip mt-<%=index%>"
+										class="more-techs-tooltip am-mt-<%=index%>"
 									>
 										<% for (let j = 4; j <
 										work.technologies.length; j++) { %> <%
@@ -183,7 +183,6 @@
 					<h2 class="highlight">Projects</h2>
 				</div>
 				<div class="row-2">
-					<p>Here are some of my projects</p>
 					<div id="all-projects">
 						<% projectData.forEach((project, index, array) => { %>
 						<div class="project-card">
@@ -192,7 +191,14 @@
 								src="<%= project.image %>"
 								alt="Project Image"
 							/>
-							<h2><%= project.title %></h2>
+							<a href="<%= project.github %>"
+								><h2><%= project.title %></h2>
+								<img
+									class="project-github-svg"
+									src="/img/tech/github.svg"
+									alt="Github"
+								/>
+							</a>
 							<p><%= project.description %></p>
 							<% for (let i = 0; i < project.technologies.length
 							&& i < 4; i++) { %> <% tech =
@@ -206,12 +212,14 @@
 								/>
 							</div>
 							<% } %> <% if (project.technologies.length > 4) {%>
-							<div class="techs more-techs mt-<%=index%>">
+							<div class="techs more-techs pr-mt-<%=index%>">
 								<%= project.technologies.length - 4 %> more...
-								<div class="more-techs-tooltip mt-<%=index%>">
+								<div
+									class="more-techs-tooltip pr-mt-<%=index%>"
+								>
 									<% for (let j = 4; j <
 									project.technologies.length; j++) { %> <%
-									tech = work.technologies[j] %>
+									tech = project.technologies[j] %>
 
 									<div class="techs techs-icon-box">
 										<%= tech.name %>
@@ -229,6 +237,7 @@
 						<% }); %>
 					</div>
 				</div>
+				<div class="row-3"></div>
 			</section>
 
 			<section id="contact">

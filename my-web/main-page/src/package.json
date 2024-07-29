@@ -5,7 +5,7 @@
 	"main": "app.js",
 	"scripts": {
 		"start": "node app.js",
-		"local": "nodemon --legacy-watch app.js -e ejs,css,js"
+		"local": "nodemon --ignore ./node_modules/ --legacy-watch app.js -e ejs,css,js"
 	},
 	"repository": {
 		"type": "git",
