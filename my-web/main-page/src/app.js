@@ -20,7 +20,7 @@ const log = new Logger({
 	],
 });
 
-const whatsApp = ""; //new WhatsAppController(log);
+const whatsApp = new WhatsAppController(log);
 
 //const root_routes = require("./routes/root_routes")(log, whatsApp);
 const root_routes = require("./routes/router")(log, whatsApp);

@@ -27,13 +27,13 @@ function placeTooltip() {
 						"min-width": "100%",
 					});
 					return;
+				} else {
+					Object.assign(aboutMeTooltip.style, {
+						left: `${x}px`,
+						top: `${y}px`,
+						"min-width": "300px",
+					});
 				}
-
-				Object.assign(aboutMeTooltip.style, {
-					left: `${x}px`,
-					top: `${y}px`,
-					"min-width": "300px",
-				});
 			});
 		}
 
@@ -58,13 +58,13 @@ function placeTooltip() {
 						"min-width": "100%",
 					});
 					return;
+				} else {
+					Object.assign(projectTooltip.style, {
+						left: `${x}px`,
+						top: `${y}px`,
+						"min-width": "300px",
+					});
 				}
-
-				Object.assign(projectTooltip.style, {
-					left: `${x}px`,
-					top: `${y}px`,
-					"min-width": "300px",
-				});
 			});
 		}
 	}

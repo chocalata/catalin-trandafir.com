@@ -1,7 +1,7 @@
 workData = [
 	{
 		position: "left",
-		company_name: "Everis (NTT Data)",
+		company_name: "NTT Data",
 		company_url: "https://es.nttdata.com/",
 		work_description:
 			"Java Developer specialized in task automation and system maintenance, contributing within an internal support team. Creator of efficient solutions to streamline processes and enhance system stability through Java development.",
@@ -101,7 +101,7 @@ projectData = [
 	{
 		title: "Apolo X",
 		description:
-			"This was my first project. It's a videogame with a single player and multiplayer mode. Made as a final project for the course with Alberto Gutierro.",
+			"This was my first project. It's a videogame with a single player and local multiplayer mode. Made as a final project for the course with Alberto Gutierro.",
 		github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
 		image: "/img/projects/ApoloX.png",
 		technologies: [
@@ -110,7 +110,7 @@ projectData = [
 			},
 		],
 	},
-	{
+	/*{
 		title: "Project 2",
 		description: "This is the second project description.",
 		github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
@@ -157,7 +157,7 @@ projectData = [
 				name: "Node.js",
 			},
 		],
-	},
+	},*/
 ];
 
 module.exports = function routes(log, whatsApp) {
