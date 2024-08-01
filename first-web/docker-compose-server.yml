@@ -7,9 +7,7 @@ version: "3.8"
 
 services:
     catalin-trandafir.com_first-web:
-        build:
-            context: "./main-page"
-            dockerfile: "Dockerfile"
+        image: "chocalata/catalin-trandafir.com:first-web_2024-07-25-v1"
         ports:
             - 3001:3001
         environment:
@@ -17,3 +15,18 @@ services:
             - DEBUG=nodejs-docker-express:*
             - PORT=3001
             - TZ='Europe/Madrid'
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.catalin-trandafir_com__first-web.entrypoints=web, websecure"
+            - "traefik.http.routers.catalin-trandafir_com__first-web.rule=Host(`catalin-trandafir.com`) && PathPrefix(`/first-web`) || Host(`www.catalin-trandafir.com`) && PathPrefix(`/first-web`)"
+            - "traefik.http.routers.catalin-trandafir_com__first-web.tls=true"
+            - "traefik.http.routers.catalin-trandafir_com__first-web.tls.certresolver=production"
+            - "traefik.http.services.catalin-trandafir_com__first-web.loadbalancer.server.port=3001"
+            - "traefik.docker.network=traefik"
+        restart: "unless-stopped"
+        networks:
+            - "traefik"
+networks:
+    traefik:
+        external:
+            name: traefik
