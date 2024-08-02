@@ -15,8 +15,9 @@ RUN until apt install -y chromium --fix-missing; do \
     echo "Retrying apt install..."; \
     sleep 2; \
     done
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

@@ -10,6 +10,15 @@ RUN until xargs -a /debian-dependencies-chrome-whatsappweb.txt apt install -y --
     sleep 2; \
     done
 
+## FOR PUPPETEER TO WORK ON ARM64
+RUN until apt install -y chromium --fix-missing; do \
+    echo "Retrying apt install..."; \
+    sleep 2; \
+    done
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY src/ /usr/src/app/
