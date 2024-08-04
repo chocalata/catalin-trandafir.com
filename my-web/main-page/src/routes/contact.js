@@ -7,6 +7,8 @@ module.exports = function routes(log, whatsApp) {
 		const token = req.body["g-recaptcha-response"];
 
 		if (!token) {
+			log.error("reCAPTCHA token is missing");
+
 			return res.status(400).json({
 				success: false,
 				message: "reCAPTCHA token is missing",
@@ -21,7 +23,7 @@ module.exports = function routes(log, whatsApp) {
 					params: {
 						secret: process.env.RECAPTCHA_SECRET_KEY,
 						response: token,
-						remoteip: req.ip, // Opcional: dirección IP del usuario
+						remoteip: req.ip,
 					},
 				}
 			);
@@ -29,10 +31,13 @@ module.exports = function routes(log, whatsApp) {
 			const data = response.data;
 
 			if (data.success) {
-				// Aquí puedes manejar el envío del formulario si el reCAPTCHA es válido
-
+				log.info("reCAPTCHA verification successful");
+				log.info(data);
 				next();
 			} else {
+				log.error("reCAPTCHA verification failed");
+				log.error(data);
+
 				res.status(400).json({
 					success: false,
 					message: "reCAPTCHA verification failed",
@@ -40,6 +45,9 @@ module.exports = function routes(log, whatsApp) {
 				});
 			}
 		} catch (error) {
+			log.error("Error verifying reCAPTCHA");
+			log.error(error);
+
 			res.status(500).json({
 				success: false,
 				message: "Error verifying reCAPTCHA",
