@@ -92,9 +92,29 @@ projectData = [
 			"This was my first project. It's a videogame with a single player and local multiplayer mode. Made as a final project for the course with Alberto Gutierro.",
 		github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
 		image: "/img/projects/ApoloX.png",
+		web: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves/releases/tag/v1.0",
 		technologies: [
 			{
 				name: "Java",
+			},
+		],
+	},
+	{
+		title: "Chrono App",
+		description:
+			"An app to keep track of time with a chronometer, countdown to zero and a way to set a personal interval (workout routines, study session, breathing exersices...).",
+		github: "https://github.com/chocalata/ChronoApp",
+		web: "https://chrono-app.chocalata.dev",
+		image: "/img/projects/ChronoApp.png",
+		technologies: [
+			{
+				name: "Astro",
+			},
+			{
+				name: "Tailwind",
+			},
+			{
+				name: "Capacitor",
 			},
 		],
 	},
