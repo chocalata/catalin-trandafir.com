@@ -1,20 +1,18 @@
-version: "3.8"
-
 services:
-    catalin-trandafir.com:
-        build:
-            context: "./main-page"
-            dockerfile: "Dockerfile.local"
-        ports:
-            - 3000:3000
-        environment:
-            - NODE_ENV=development
-            - DEBUG=nodejs-docker-express:*
-            - PORT=3000
-            - TZ='Europe/Madrid'
-            - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
-            - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
-            - WHATSAPP_CHAT_WEB_CONTACT=${WHATSAPP_CHAT_WEB_CONTACT}
-        volumes:
-            #PARA QUE FUNCIONE EL NODAEMON
-            - ./main-page/src/:/usr/src/app/
+  catalin-trandafir.com:
+    build:
+      context: "./main-page"
+      dockerfile: "Dockerfile.local"
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+      - DEBUG=nodejs-docker-express:*
+      - PORT=3000
+      - TZ='Europe/Madrid'
+      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
+      - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
+      - WHATSAPP_CHAT_WEB_CONTACT=${WHATSAPP_CHAT_WEB_CONTACT}
+    volumes:
+      #PARA QUE FUNCIONE EL NODAEMON
+      - ./main-page/src/:/usr/src/app/
