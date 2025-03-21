@@ -71,7 +71,7 @@ module.exports = function routes(log, whatsApp) {
 
     const messageToSend = `Hey,\n\nHa llegado un nuevo mensaje de *${name} (${email})*:\n> ${message}`
 
-    //whatsApp.sendMessage(messageToSend);
+    whatsApp.sendMessage(messageToSend)
 
     res.status(200).json({
       success: true,
