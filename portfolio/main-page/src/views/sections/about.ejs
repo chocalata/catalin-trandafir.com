@@ -1,0 +1,58 @@
+<section id="about-me">
+	<div class="row-1">
+		<h2>Hello! I'm <b class="highlight">Cata</b></h2>
+		<p>
+			Working as a
+			<b class="highlight">Full-Stack developer</b> in
+			<a href="https://www.pue.es/">PUE.</a>
+		</p>
+	</div>
+	<div class="row-2">
+		<canvas id="line"></canvas>
+		<div class="timeline">
+			<% workData.forEach((work, index, array) => { %>
+			<div class="container <%= work.position %>">
+				<dot id="dot-<%= (index + 1) %>"></dot>
+				<div class="content">
+					<h2 class="highlight">
+						<a href="<%= work.company_url %>"> <%= work.company_name %> </a>
+					</h2>
+					<b
+						><i><p class="work-date highlight"><%= work.date %></p></i></b
+					>
+					<p><%= work.work_description %></p>
+					<% for (let i = 0; i < work.technologies.length && i < 4; i++) { %> <%
+					let tech = work.technologies[i]; %>
+					<div class="techs techs-icon-box">
+						<%= tech.name %>
+						<img
+							class="tech-svg"
+							src="/img/tech/<%= tech.name %>.svg"
+							alt="<%= tech.name %>"
+						/>
+					</div>
+					<% } %> <% if (work.technologies.length > 4) { %>
+					<div class="techs more-techs am-mt-<%=index%>">
+						<%= work.technologies.length - 4 %> more...
+						<div class="more-techs-tooltip am-mt-<%=index%>">
+							<% for (let j = 4; j < work.technologies.length; j++) { %> <% let
+							tech = work.technologies[j]; %>
+							<div class="techs techs-icon-box">
+								<%= tech.name %>
+								<img
+									class="tech-svg"
+									src="/img/tech/<%= tech.name %>.svg"
+									alt="<%= tech.name %>"
+								/>
+							</div>
+							<% } %>
+						</div>
+					</div>
+					<% } %>
+				</div>
+			</div>
+			<% }) %>
+		</div>
+	</div>
+	<div class="row-3"></div>
+</section>

@@ -1,0 +1,102 @@
+/* about.css */
+section#about-me {
+    grid-template-rows: auto 1fr auto;
+}
+
+#about-me .row-1 {
+    margin-bottom: 0;
+}
+
+#about-me .row-1 h2 {
+    font-size: 5vh;
+}
+
+#about-me .row-1 p {
+    font-size: 4vh;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.container {
+    width: 50%;
+    position: relative;
+    margin-top: 1vh;
+}
+
+dot {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border: 4px solid #C2D9FF;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.right dot {
+    float: left;
+}
+
+.right .content {
+    float: left;
+    width: calc(100% - 45px);
+    padding-left: 10px;
+}
+
+.left dot {
+    float: right;
+}
+
+.left .content {
+    text-align: right;
+    float: right;
+    width: calc(100% - 45px);
+    padding-right: 10px;
+}
+
+.content h2.highlight {
+    margin-bottom: 10px;
+}
+
+.left,
+.right {
+    clear: both;
+}
+
+.left,
+.right .techs,
+.project-card .techs {
+    float: left;
+}
+
+.right,
+.left .techs {
+    float: right;
+}
+
+@media screen and (max-width: 750px) {
+
+    .left dot,
+    .left .techs {
+        float: left;
+    }
+
+    .left .content {
+        text-align: left;
+        float: left;
+        padding-right: 0px;
+        padding-left: 10px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .right {
+        float: left;
+    }
+}
