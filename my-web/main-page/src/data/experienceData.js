@@ -1,52 +1,7 @@
 workData = [
   {
     position: 'left',
-    company_name: 'NTT Data',
-    company_url: 'https://es.nttdata.com/',
-    work_description:
-      'Java Developer specialized in task automation and system maintenance, contributing within an internal support team. Creator of efficient solutions to streamline processes and enhance system stability through Java development.',
-    technologies: [
-      {
-        name: 'Java'
-      }
-    ]
-  },
-  {
-    position: 'right',
-    company_name: 'PUE',
-    company_url: 'https://pue.es/',
-    work_description:
-      'Full-stack management for internal and external apps, handling system admin and deployments. Building APIs for internal use and integrating external ones, including data processing. Managing and designing databases.',
-    technologies: [
-      {
-        name: 'Docker'
-      },
-      {
-        name: 'Python'
-      },
-      {
-        name: 'Node.js'
-      },
-      {
-        name: 'Express.js'
-      },
-      {
-        name: 'MySQL'
-      },
-      {
-        name: 'Redis'
-      },
-      {
-        name: 'Linux'
-      },
-      {
-        name: 'HTML5'
-      }
-    ]
-  },
-  {
-    position: 'right',
-    company_name: 'I+D+I PUE',
+    company_name: 'PUE R&D&I',
     company_url: 'https://pue.es/',
     work_description:
       "Exploration of new technologies and methodologies to improve internal projects. Participation in the transformation of the company's infrastructure to optimize performance and scalability. Migration of systems and services to AWS infrastructure, ensuring efficiency and security. Implementation and management of Kubernetes clusters to enhance availability and deployment automation. Maintaining a significant portion of the responsibilities from the previous role.",
@@ -81,7 +36,56 @@ workData = [
       {
         name: 'HTML5'
       }
-    ]
+    ],
+    date: 'jul. 2023 - present'
+  },
+  {
+    position: 'left',
+    company_name: 'PUE',
+    company_url: 'https://pue.es/',
+    work_description:
+      'Full-stack management for internal and external apps, handling system admin and deployments. Building APIs for internal use and integrating external ones, including data processing. Managing and designing databases.',
+    technologies: [
+      {
+        name: 'Docker'
+      },
+      {
+        name: 'Python'
+      },
+      {
+        name: 'Node.js'
+      },
+      {
+        name: 'Express.js'
+      },
+      {
+        name: 'MySQL'
+      },
+      {
+        name: 'Redis'
+      },
+      {
+        name: 'Linux'
+      },
+      {
+        name: 'HTML5'
+      }
+    ],
+    date: 'nov. 2022 - jul. 2023'
+  },
+
+  {
+    position: 'right',
+    company_name: 'NTT Data',
+    company_url: 'https://es.nttdata.com/',
+    work_description:
+      'Java Developer specialized in task automation and system maintenance, contributing within an internal support team. Creator of efficient solutions to streamline processes and enhance system stability through Java development.',
+    technologies: [
+      {
+        name: 'Java'
+      }
+    ],
+    date: 'dec. 2019 - oct. 2020'
   }
 ]
 

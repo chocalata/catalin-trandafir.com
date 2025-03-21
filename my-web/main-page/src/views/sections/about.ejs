@@ -15,13 +15,14 @@
 				<dot id="dot-<%= (index + 1) %>"></dot>
 				<div class="content">
 					<h2 class="highlight">
-						<a href="<%= work.company_url %>">
-							<%= work.company_name %>
-						</a>
+						<a href="<%= work.company_url %>"> <%= work.company_name %> </a>
 					</h2>
+					<b
+						><i><p class="work-date highlight"><%= work.date %></p></i></b
+					>
 					<p><%= work.work_description %></p>
-					<% for (let i = 0; i < work.technologies.length && i < 4;
-					i++) { %> <% let tech = work.technologies[i]; %>
+					<% for (let i = 0; i < work.technologies.length && i < 4; i++) { %> <%
+					let tech = work.technologies[i]; %>
 					<div class="techs techs-icon-box">
 						<%= tech.name %>
 						<img
@@ -34,8 +35,8 @@
 					<div class="techs more-techs am-mt-<%=index%>">
 						<%= work.technologies.length - 4 %> more...
 						<div class="more-techs-tooltip am-mt-<%=index%>">
-							<% for (let j = 4; j < work.technologies.length;
-							j++) { %> <% let tech = work.technologies[j]; %>
+							<% for (let j = 4; j < work.technologies.length; j++) { %> <% let
+							tech = work.technologies[j]; %>
 							<div class="techs techs-icon-box">
 								<%= tech.name %>
 								<img
