@@ -9,13 +9,13 @@ const helmet = require("helmet");
 const Logger = require("bunyan");
 
 const log = new Logger({
-	name: "logger",
-	streams: [
-		{
-			level: "info",
-			stream: process.stdout,
-		},
-	],
+  name: "logger",
+  streams: [
+    {
+      level: "info",
+      stream: process.stdout,
+    },
+  ],
 });
 
 const root_routes = require("./routes/root_routes")(log);
@@ -31,12 +31,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Securing app with helmet, recommended practice by Express
 app.use(
-	//Executing drive videos.
-	helmet.contentSecurityPolicy({
-		directives: {
-			defaultSrc: ["'self'"],
-		},
-	})
+  //Executing drive videos.
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+    },
+  }),
 );
 
 //CSS paths
@@ -55,7 +55,7 @@ app.set("view engine", "ejs");
 app.use("/first-web", root_routes);
 
 app.listen(process.env.PORT, () => {
-	console.log(
-		"Express is running on port " + process.env.PORT + " at " + Date()
-	);
+  console.log(
+    "Express is running on port " + process.env.PORT + " at " + Date(),
+  );
 });

@@ -1,41 +1,40 @@
 body {
-    background-image: url("../img/fotoborrosa.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    
+  background-image: url("../img/fotoborrosa.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 .titulo {
-    text-align: center;
-    font-family: Tahoma;
-    font-size: 90px;
-    color: rgb(255, 255, 255);
-    margin-top: 0px;
-    clear: both;
+  text-align: center;
+  font-family: Tahoma;
+  font-size: 90px;
+  color: rgb(255, 255, 255);
+  margin-top: 0px;
+  clear: both;
 }
-div.menu{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
+div.menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 li {
-    float: left;
-    left: 5px;
+  float: left;
+  left: 5px;
 }
 
 li a {
-    font-family: Tahoma;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    background-color: rgb(255, 103, 103);
+  font-family: Tahoma;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: rgb(255, 103, 103);
 }
 
 li a:hover {
-    background-color: #111;
+  background-color: #111;
 }

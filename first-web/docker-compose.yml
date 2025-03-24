@@ -1,17 +1,17 @@
 version: "3.8"
 
 services:
-    catalin-trandafir.com_first-web:
-        build:
-            context: "./main-page"
-            dockerfile: "Dockerfile.local"
-        ports:
-            - 3001:3001
-        environment:
-            - NODE_ENV=development
-            - DEBUG=nodejs-docker-express:*
-            - PORT=3001
-            - TZ='Europe/Madrid'
-        volumes:
-            #PARA QUE FUNCIONE EL NODAEMON
-            - ./main-page/src/:/usr/src/app/
+  catalin-trandafir.com_first-web:
+    build:
+      context: "./main-page"
+      dockerfile: "Dockerfile.local"
+    ports:
+      - 3001:3001
+    environment:
+      - NODE_ENV=development
+      - DEBUG=nodejs-docker-express:*
+      - PORT=3001
+      - TZ='Europe/Madrid'
+    volumes:
+      #PARA QUE FUNCIONE EL NODEMON
+      - ./main-page/src/:/usr/src/app/

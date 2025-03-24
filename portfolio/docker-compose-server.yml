@@ -1,36 +1,34 @@
-version: "3.8"
-
 services:
-    catalin-trandafir.com:
-        image: "chocalata/catalin-trandafir.com:my-web_2024-08-01-v3"
-        environment:
-            - NODE_ENV=production
-            - DEBUG=nodejs-docker-express:*
-            - PORT=3000
-            - TZ='Europe/Madrid'
-            - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
-            - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
-            - WHATSAPP_CHAT_WEB_CONTACT=${WHATSAPP_CHAT_WEB_CONTACT}
-        labels:
-            - "traefik.enable=true"
-            - "traefik.http.routers.catalin-trandafir_com__my-web.entrypoints=web, websecure"
-            - "traefik.http.routers.catalin-trandafir_com__my-web.rule=Host(`catalin-trandafir.com`) || Host(`www.catalin-trandafir.com`)"
-            - "traefik.http.routers.catalin-trandafir_com__my-web.tls=true"
-            - "traefik.http.routers.catalin-trandafir_com__my-web.tls.certresolver=production"
-            - "traefik.http.services.catalin-trandafir_com__my-web.loadbalancer.server.port=3000"
-            - "traefik.docker.network=traefik"
-        restart: "unless-stopped"
-        logging:
-            driver: "json-file"
-            options:
-                max-size: "50m"
-                max-file: "5"
-        volumes:
-            #Saving whatsapp web session
-            - ./whatsapp-data/:/usr/src/app/whatsapp-data/
-        networks:
-            - "traefik"
+  catalin-trandafir.com:
+    image: "chocalata/catalin-trandafir.com:my-web_2024-08-01-v3"
+    environment:
+      - NODE_ENV=production
+      - DEBUG=nodejs-docker-express:*
+      - PORT=3000
+      - TZ='Europe/Madrid'
+      - RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
+      - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
+      - WHATSAPP_CHAT_WEB_CONTACT=${WHATSAPP_CHAT_WEB_CONTACT}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catalin-trandafir_com__my-web.entrypoints=web, websecure"
+      - "traefik.http.routers.catalin-trandafir_com__my-web.rule=Host(`catalin-trandafir.com`) || Host(`www.catalin-trandafir.com`)"
+      - "traefik.http.routers.catalin-trandafir_com__my-web.tls=true"
+      - "traefik.http.routers.catalin-trandafir_com__my-web.tls.certresolver=production"
+      - "traefik.http.services.catalin-trandafir_com__my-web.loadbalancer.server.port=3000"
+      - "traefik.docker.network=traefik"
+    restart: "unless-stopped"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    volumes:
+      #Saving whatsapp web session
+      - ./whatsapp-data/:/usr/src/app/whatsapp-data/
+    networks:
+      - "traefik"
 networks:
-    traefik:
-        external:
-            name: traefik
+  traefik:
+    external:
+      name: traefik

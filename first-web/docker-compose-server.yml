@@ -6,30 +6,30 @@
 version: "3.8"
 
 services:
-    catalin-trandafir.com_first-web:
-        image: "chocalata/catalin-trandafir.com:first-web_2024-07-25-v1"
-        environment:
-            - NODE_ENV=production
-            - DEBUG=nodejs-docker-express:*
-            - PORT=3001
-            - TZ='Europe/Madrid'
-        labels:
-            - "traefik.enable=true"
-            - "traefik.http.routers.catalin-trandafir_com__first-web.entrypoints=web, websecure"
-            - "traefik.http.routers.catalin-trandafir_com__first-web.rule=Host(`catalin-trandafir.com`) && PathPrefix(`/first-web`) || Host(`www.catalin-trandafir.com`) && PathPrefix(`/first-web`)"
-            - "traefik.http.routers.catalin-trandafir_com__first-web.tls=true"
-            - "traefik.http.routers.catalin-trandafir_com__first-web.tls.certresolver=production"
-            - "traefik.http.services.catalin-trandafir_com__first-web.loadbalancer.server.port=3001"
-            - "traefik.docker.network=traefik"
-        restart: "unless-stopped"
-        logging:
-            driver: "json-file"
-            options:
-                max-size: "50m"
-                max-file: "5"
-        networks:
-            - "traefik"
+  catalin-trandafir.com_first-web:
+    image: "chocalata/catalin-trandafir.com:first-web_2024-07-25-v1"
+    environment:
+      - NODE_ENV=production
+      - DEBUG=nodejs-docker-express:*
+      - PORT=3001
+      - TZ='Europe/Madrid'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.entrypoints=web, websecure"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.rule=Host(`catalin-trandafir.com`) && PathPrefix(`/first-web`) || Host(`www.catalin-trandafir.com`) && PathPrefix(`/first-web`)"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.tls=true"
+      - "traefik.http.routers.catalin-trandafir_com__first-web.tls.certresolver=production"
+      - "traefik.http.services.catalin-trandafir_com__first-web.loadbalancer.server.port=3001"
+      - "traefik.docker.network=traefik"
+    restart: "unless-stopped"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    networks:
+      - "traefik"
 networks:
-    traefik:
-        external:
-            name: traefik
+  traefik:
+    external:
+      name: traefik

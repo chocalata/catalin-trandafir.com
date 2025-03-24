@@ -1,38 +1,38 @@
-const WhatsAppController = require('./models/WhatsAppController')
+const WhatsAppController = require("./models/WhatsAppController");
 
-const express = require('express')
+const express = require("express");
 
-const path = require('path')
+const path = require("path");
 
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 
-const helmet = require('helmet')
+const helmet = require("helmet");
 
-const Logger = require('bunyan')
+const Logger = require("bunyan");
 
 const log = new Logger({
-  name: 'logger',
+  name: "logger",
   streams: [
     {
-      level: 'info',
-      stream: process.stdout
-    }
-  ]
-})
+      level: "info",
+      stream: process.stdout,
+    },
+  ],
+});
 
-const whatsApp = new WhatsAppController(log)
+const whatsApp = new WhatsAppController(log);
 
 //const root_routes = require("./routes/root_routes")(log, whatsApp);
-const root_routes = require('./routes/router')(log, whatsApp)
+const root_routes = require("./routes/router")(log, whatsApp);
 
 //EXPRESS
-const app = express()
+const app = express();
 
 //For POST and PUT requests (req.body)
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 //Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Securing app with helmet, recommended practice by Express
 app.use(
@@ -42,36 +42,36 @@ app.use(
       mediaSrc: ["'self'"],
       scriptSrc: [
         "'self'",
-        'https://www.google.com',
-        'https://www.gstatic.com',
-        "'unsafe-inline'"
+        "https://www.google.com",
+        "https://www.gstatic.com",
+        "'unsafe-inline'",
       ],
       scriptSrcElem: [
         "'self'",
-        'https://www.google.com',
-        'https://www.gstatic.com',
-        "'unsafe-inline'"
+        "https://www.google.com",
+        "https://www.gstatic.com",
+        "'unsafe-inline'",
       ],
-      frameSrc: ["'self'", 'https://www.google.com'],
+      frameSrc: ["'self'", "https://www.google.com"],
       connectSrc: [
         "'self'",
-        'https://www.google.com',
-        'https://www.gstatic.com'
-      ]
-    }
-  })
-)
+        "https://www.google.com",
+        "https://www.gstatic.com",
+      ],
+    },
+  }),
+);
 
 //LIBS paths
 app.use(
-  '/lib/three/build/',
-  express.static(path.join(__dirname, 'node_modules/three/build'))
-)
+  "/lib/three/build/",
+  express.static(path.join(__dirname, "node_modules/three/build")),
+);
 
 app.use(
-  '/lib/three/examples/jsm/',
-  express.static(path.join(__dirname, 'node_modules/three/examples/jsm'))
-)
+  "/lib/three/examples/jsm/",
+  express.static(path.join(__dirname, "node_modules/three/examples/jsm")),
+);
 
 /*/Inserting floating-ui library
 app.use(
@@ -86,47 +86,47 @@ app.use(
 );
 */
 app.use(
-  '/js/floating-ui/',
-  express.static(path.join(__dirname, 'node_modules/@floating-ui/dom/dist'))
-)
+  "/js/floating-ui/",
+  express.static(path.join(__dirname, "node_modules/@floating-ui/dom/dist")),
+);
 
 app.use(
-  '/js/floating-ui/',
-  express.static(path.join(__dirname, 'node_modules/@floating-ui/core/dist'))
-)
+  "/js/floating-ui/",
+  express.static(path.join(__dirname, "node_modules/@floating-ui/core/dist")),
+);
 
 //CSS paths
-app.use('/css', express.static(__dirname + '/public/css'))
+app.use("/css", express.static(__dirname + "/public/css"));
 
 //JS paths
-app.use('/js', express.static(__dirname + '/public/js'))
+app.use("/js", express.static(__dirname + "/public/js"));
 
 //IMG paths
-app.use('/img', express.static(__dirname + '/public/img'))
+app.use("/img", express.static(__dirname + "/public/img"));
 
 //FONTS paths
-app.use('/fonts', express.static(__dirname + '/public/fonts'))
+app.use("/fonts", express.static(__dirname + "/public/fonts"));
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 //ENDPOINTS
-app.use('/', root_routes)
+app.use("/", root_routes);
 
 app.listen(process.env.PORT, () => {
   console.log(
-    '################################################################################\n################################################################################'
-  )
+    "################################################################################\n################################################################################",
+  );
   console.log(
-    '## Express is running on port ' +
+    "## Express is running on port " +
       process.env.PORT +
-      ' at ' +
+      " at " +
       Date() +
-      ' ##'
-  )
+      " ##",
+  );
   console.log(
-    '################################################################################\n################################################################################'
-  )
-})
+    "################################################################################\n################################################################################",
+  );
+});
 
-module.exports = app
+module.exports = app;

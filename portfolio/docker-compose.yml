@@ -14,5 +14,5 @@ services:
       - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
       - WHATSAPP_CHAT_WEB_CONTACT=${WHATSAPP_CHAT_WEB_CONTACT}
     volumes:
-      #PARA QUE FUNCIONE EL NODAEMON
+      #PARA QUE FUNCIONE EL NODEMON
       - ./main-page/src/:/usr/src/app/
