@@ -14,9 +14,9 @@
 				<div class="project-title">
 					<h2><%= project.title %></h2>
 					<div class="project-links">
-						<a href="<%= project.web %>" class="project-web">
+						<a href="<%= project.web %>" class="site-icon">
 							<svg
-								class="project-web-svg"
+								class="site-icon-svg"
 								width="800px"
 								height="800px"
 								viewBox="0 0 16 16"
@@ -37,9 +37,9 @@
 								/>
 							</svg>
 						</a>
-						<a href="<%= project.github %>" class="project-github">
+						<a href="<%= project.github %>" class="site-icon">
 							<svg
-								class="project-github-svg"
+								class="site-icon-svg"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 128 128"
 							>
@@ -58,8 +58,8 @@
 					</div>
 				</div>
 				<p><%= project.description %></p>
-				<% for (let i = 0; i < project.technologies.length && i < 4;
-				i++) { %> <% let tech = project.technologies[i]; %>
+				<% for (let i = 0; i < project.technologies.length && i < 4; i++) { %>
+				<% let tech = project.technologies[i]; %>
 				<div class="techs techs-icon-box">
 					<%= tech.name %>
 					<img
@@ -72,8 +72,8 @@
 				<div class="techs more-techs pr-mt-<%=index%>">
 					<%= project.technologies.length - 4 %> more...
 					<div class="more-techs-tooltip pr-mt-<%=index%>">
-						<% for (let j = 4; j < project.technologies.length; j++)
-						{ %> <% let tech = project.technologies[j]; %>
+						<% for (let j = 4; j < project.technologies.length; j++) { %> <% let
+						tech = project.technologies[j]; %>
 						<div class="techs techs-icon-box">
 							<%= tech.name %>
 							<img
