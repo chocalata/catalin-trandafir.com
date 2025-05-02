@@ -94,38 +94,60 @@ workData = [
 
 projectData = [
   {
-    title: "Apolo X",
+    title: 'Apolo X',
     description:
       "This was my first project. It's a videogame with a single player and local multiplayer mode. Made as a final project for the course with Alberto Gutierro.",
-    github: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves",
-    image: "/img/projects/ApoloX.png",
-    web: "https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves/releases/tag/v1.0",
+    github: 'https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves',
+    image: '/img/projects/ApoloX.png',
+    web: 'https://github.com/Alberto-Gutierro/Catalin_Alberto-Juego_Naves/releases/tag/v1.0',
     technologies: [
       {
-        name: "Java",
-      },
-    ],
+        name: 'Java'
+      }
+    ]
   },
   {
-    title: "Chrono App",
+    title: 'Email Tracker',
     description:
-      "An app to keep track of time with a chronometer, countdown to zero and a way to set a personal interval (workout routines, study session, breathing exersices...).",
-    github: "https://github.com/chocalata/ChronoApp",
-    web: "https://chrono-app.chocalata.dev",
-    image: "/img/projects/ChronoApp.png",
+      'A simple email tracker that allows you to track when your emails are opened. It uses a tracking pixel to detect when the email is opened',
+    github: 'https://github.com/chocalata/email-tracker',
+    web: 'https://email-tracker.catalin-trandafir.com',
+    image: '/img/projects/EmailTracker.png',
     technologies: [
       {
-        name: "Astro",
+        name: 'Node.js'
       },
       {
-        name: "Tailwind",
+        name: 'Express.js'
       },
       {
-        name: "Capacitor",
+        name: 'Redis'
       },
-    ],
+      {
+        name: 'Docker'
+      }
+    ]
   },
-];
+  {
+    title: 'Chrono App',
+    description:
+      'An app to keep track of time with a chronometer, countdown to zero and a way to set a personal interval (workout routines, study session, breathing exersices...).',
+    github: 'https://github.com/chocalata/ChronoApp',
+    web: 'https://chrono-app.chocalata.dev',
+    image: '/img/projects/ChronoApp.png',
+    technologies: [
+      {
+        name: 'Astro'
+      },
+      {
+        name: 'Tailwind'
+      },
+      {
+        name: 'Capacitor'
+      }
+    ]
+  }
+]
 
 module.exports = {
   workData,
