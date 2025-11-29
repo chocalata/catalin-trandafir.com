@@ -1,96 +1,120 @@
 workData = [
   {
-    position: "left",
-    company_name: "PUE R&D&I",
-    company_url: "https://pue.es/",
+    position: 'right',
+    company_name: 'Amphora Logistics',
+    company_url: 'https://amphoralogistics.com',
+    work_description: '',
+    technologies: [
+      {
+        name: 'Python'
+      },
+      {
+        name: 'AWS'
+      },
+      {
+        name: 'Lambda'
+      },
+      {
+        name: 'DynamoDB'
+      },
+      {
+        name: 'Vue.js'
+      }
+    ],
+    date: 'nov. 2025 - present'
+  },
+  {
+    position: 'left',
+    company_name: 'PUE R&D&I',
+    company_url: 'https://pue.es/',
     work_description:
       "Exploration of new technologies and methodologies to improve internal projects. Participation in the transformation of the company's infrastructure to optimize performance and scalability. Migration of systems and services to AWS infrastructure, ensuring efficiency and security. Implementation and management of Kubernetes clusters to enhance availability and deployment automation. Maintaining a significant portion of the responsibilities from the previous role.",
     technologies: [
       {
-        name: "Kubernetes",
+        name: 'Kubernetes'
       },
       {
-        name: "AWS",
+        name: 'AWS'
       },
       {
-        name: "Docker",
+        name: 'Docker'
       },
       {
-        name: "Python",
+        name: 'Python'
       },
       {
-        name: "Flask",
+        name: 'Flask'
       },
       {
-        name: "Node.js",
+        name: 'Node.js'
       },
       {
-        name: "Express.js",
+        name: 'Express.js'
       },
       {
-        name: "MySQL",
+        name: 'MySQL'
       },
       {
-        name: "Redis",
+        name: 'Redis'
       },
       {
-        name: "Linux",
+        name: 'Linux'
       },
       {
-        name: "HTML5",
-      },
+        name: 'HTML5'
+      }
     ],
-    date: "jul. 2023 - present",
+    date: 'jul. 2023 - nov. 2025'
   },
   {
-    position: "left",
-    company_name: "PUE",
-    company_url: "https://pue.es/",
+    position: 'left',
+    company_name: 'PUE',
+    company_url: 'https://pue.es/',
     work_description:
-      "Full-stack management for internal and external apps, handling system admin and deployments. Building APIs for internal use and integrating external ones, including data processing. Managing and designing databases.",
+      'Full-stack management for internal and external apps, handling system admin and deployments. Building APIs for internal use and integrating external ones, including data processing. Managing and designing databases.',
     technologies: [
       {
-        name: "Docker",
+        name: 'Docker'
       },
       {
-        name: "Python",
+        name: 'Python'
       },
       {
-        name: "Node.js",
+        name: 'Node.js'
       },
       {
-        name: "Express.js",
+        name: 'Express.js'
       },
       {
-        name: "MySQL",
+        name: 'MySQL'
       },
       {
-        name: "Redis",
+        name: 'Redis'
       },
       {
-        name: "Linux",
+        name: 'Linux'
       },
       {
-        name: "HTML5",
-      },
+        name: 'HTML5'
+      }
     ],
-    date: "nov. 2022 - jul. 2023",
+    date: 'nov. 2022 - jul. 2023'
   },
 
   {
-    position: "right",
-    company_name: "NTT Data",
-    company_url: "https://es.nttdata.com/",
+    position: 'right',
+    company_name: 'NTT Data',
+    company_url: 'https://es.nttdata.com/',
     work_description:
-      "Java Developer specialized in task automation and system maintenance, contributing within an internal support team. Creator of efficient solutions to streamline processes and enhance system stability through Java development.",
+      'Java Developer specialized in task automation and system maintenance, contributing within an internal support team. Creator of efficient solutions to streamline processes and enhance system stability through Java development.',
     technologies: [
       {
-        name: "Java",
-      },
+        name: 'Java'
+      }
     ],
-    date: "dec. 2019 - oct. 2020",
-  },
-];
+    date: 'dec. 2019 - oct. 2020'
+  }
+]
 
 projectData = [
   {
@@ -151,5 +175,5 @@ projectData = [
 
 module.exports = {
   workData,
-  projectData,
-};
+  projectData
+}

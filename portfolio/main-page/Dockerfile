@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 node:20
+FROM --platform=linux/arm64/v8 node:20
 RUN apt update && apt -y upgrade
 COPY debian-dependencies-chrome-whatsappweb.txt /debian-dependencies-chrome-whatsappweb.txt
 
@@ -16,7 +16,7 @@ RUN until apt install -y chromium --fix-missing; do \
     sleep 2; \
     done
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 RUN mkdir -p /usr/src/app
